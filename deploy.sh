@@ -14,6 +14,16 @@ if ! git rev-parse --is-inside-work-tree &> /dev/null; then
     exit 1
 fi
 
+# Install gh-pages package
+if ! command -v gh-pages &> /dev/null; then
+    echo "Installing gh-pages package..."
+    npm install -g gh-pages
+fi
+
+# Build the project
+echo "Building the project..."
+npm run build
+
 # Get the current branch
 current_branch=$(git rev-parse --abbrev-ref HEAD)
 

@@ -41,6 +41,7 @@ sunflower-archive/
 - Git installed on your computer
 - A GitHub account
 - Basic knowledge of HTML, CSS, and JavaScript (for modifications)
+- Node.js and npm installed on your computer
 
 ### Local Development
 
@@ -50,24 +51,34 @@ sunflower-archive/
    cd sunflower-archive
    ```
 
-2. Open `index.html` in your browser to view the site locally.
+2. Install the `gh-pages` package globally:
+   ```
+   npm install -g gh-pages
+   ```
 
-3. Make any desired changes to the HTML, CSS, or JavaScript files.
+3. Open `index.html` in your browser to view the site locally.
+
+4. Make any desired changes to the HTML, CSS, or JavaScript files.
 
 ### Hosting on GitHub Pages
 
-1. Push your repository to GitHub:
+1. Build the project:
+   ```
+   npm run build
+   ```
+
+2. Push your repository to GitHub:
    ```
    git add .
    git commit -m "Initial commit"
    git push origin main
    ```
 
-2. Go to your repository on GitHub and navigate to Settings > Pages.
+3. Go to your repository on GitHub and navigate to Settings > Pages.
 
-3. Under "Source", select the branch you want to deploy (usually "main") and click "Save".
+4. Under "Source", select the branch you want to deploy (usually "main") and click "Save".
 
-4. GitHub will provide you with a URL where your site is published (usually in the format `https://your-username.github.io/sunflower-archive/`).
+5. GitHub will provide you with a URL where your site is published (usually in the format `https://your-username.github.io/sunflower-archive/`).
 
 ## Customization
 
