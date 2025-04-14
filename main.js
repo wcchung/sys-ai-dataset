@@ -2,10 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Background Image Rotation
     const backgrounds = [
         'images/001.jpg',
-        'images/002.jpg',
-        'images/003.jpg',
         'images/005.jpg',
-        'images/006.jpg',
         'images/007.jpg',
         'images/009.jpg',
         'images/011.jpg'
@@ -19,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
         landingContainer.style.backgroundImage = `url('${backgrounds[currentBg]}')`;
     }
     
-    // Change background every 5 seconds
-    setInterval(changeBackground, 5000);
+    // Change background every 3 seconds
+    setInterval(changeBackground, 3000);
     
     // Modal functionality
     const modal = document.getElementById('infoModal');
