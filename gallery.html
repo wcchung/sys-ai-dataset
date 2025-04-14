@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>太陽花10週年影像紀實資料庫 - Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo-home">
+                <span class="title-text">太陽花<span class="gold-text">10</span>週年影像紀實資料庫</span>
+            </a>
+            <nav>
+                <ul class="tag-filter">
+                    <li class="tag-item active" data-tag="all">所有照片</li>
+                    <li class="tag-item" data-tag="legislative-yuan">立法院</li>
+                    <li class="tag-item" data-tag="executive-yuan">行政院</li>
+                    <li class="tag-item" data-tag="protest">抗議現場</li>
+                    <li class="tag-item" data-tag="people">人物</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div class="gallery-container">
+            <div class="photo-grid" id="photoGrid">
+                <!-- Photos will be loaded here via JavaScript -->
+            </div>
+        </div>
+    </main>
+    
+    <!-- Photo Modal -->
+    <div id="photoModal" class="modal photo-modal">
+        <div class="modal-content photo-modal-content">
+            <span class="close-photo-modal">&times;</span>
+            <div class="photo-details">
+                <img id="modalPhoto" src="" alt="">
+                <div class="photo-info">
+                    <h3 id="photoTitle"></h3>
+                    <p id="photoDescription"></p>
+                    <p id="photoDate"></p>
+                    <p id="photoCredit"></p>
+                    <div id="photoTags" class="photo-tags"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logos">
+                <a href="https://numbersprotocol.io" target="_blank">
+                    <img src="images/numbers-logo.png" alt="Numbers Protocol" class="logo">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="images/philosophy-photography-logo.png" alt="Philosophy Photography" class="logo">
+                </a>
+            </div>
+            <p>© 2024 太陽花10週年影像紀實資料庫. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="gallery.js"></script>
+</body>
+</html>
