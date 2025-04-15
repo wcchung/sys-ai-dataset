@@ -104,6 +104,19 @@ a {
     max-width: 100%;
 }
 
+/* Adjust the size of the logos */
+.logo-container .logo {
+    width: 120px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 10px; /* Add spacing between logos */
+}
+
+/* Optional: Add hover effect for logos */
+.logo-container .logo:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    transition: transform 0.3s ease;
+}
+
 .buttons {
     margin-top: 2rem;
     display: flex;
