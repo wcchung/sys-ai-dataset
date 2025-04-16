@@ -91,21 +91,23 @@ document.addEventListener('DOMContentLoaded', function() {
         const windowHeight = window.innerHeight;
         const isLandscape = windowWidth > windowHeight;
         
-        // Set video dimensions for better mobile fit
+        // Set default video dimensions
         video.style.width = '100vw';
         video.style.height = '100vh';
         
         // For portrait mode on mobile (common issue)
         if (!isLandscape && isMobile()) {
-            // Make video wider to ensure it covers the screen width
+            // Make video match height and align to the right
             video.style.width = 'auto';
             video.style.height = '100vh';
-            video.style.minWidth = '100vw';
+            video.style.minWidth = '100%';
             
-            // Center the video horizontally
+            // Right-align the video
             video.style.position = 'absolute';
-            video.style.left = '50%';
-            video.style.transform = 'translateX(-50%)';
+            video.style.left = 'auto';
+            video.style.right = '0';
+            video.style.transform = 'none';
+            video.style.objectPosition = 'right center';
         }
         
         // Ensure proper object-fit
