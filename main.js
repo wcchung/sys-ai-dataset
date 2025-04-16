@@ -36,15 +36,24 @@ document.addEventListener('DOMContentLoaded', function() {
         // Make sure the video is visible and properly sized
         video.style.display = 'block';
         
-        // Ensure video plays
+        // Make sure video is muted for autoplay
+        video.muted = true;
+        
+        // Set playsinline attribute for iOS
+        video.setAttribute('playsinline', true);
+        
+        // Ensure video plays without showing play button
         let playAttempt = setInterval(() => {
             video.play()
                 .then(() => {
                     clearInterval(playAttempt);
                 })
                 .catch(error => {
-                    console.log("Auto-play was prevented. Adding play button fallback.");
-                    addPlayButton();
+                    console.log("Auto-play was prevented:", error);
+                    // Don't add play button on mobile - iOS will use the poster image instead
+                    if (!isMobile()) {
+                        addPlayButton();
+                    }
                 });
         }, 500);
         
@@ -52,11 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isArc) {
             // Add a specific class for Arc browser
             document.body.classList.add('arc-browser');
-            
-            // Try different approach for Arc
-            video.setAttribute('playsinline', true);
-            video.muted = true;
-            video.autoplay = true;
             
             // Force video display
             video.style.visibility = "visible";
@@ -67,43 +71,48 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isMobile()) {
             document.body.classList.add('mobile-device');
             
-            // Adjust video for mobile
-            video.setAttribute('playsinline', true);
-            
             // Handle orientation changes
             window.addEventListener('orientationchange', function() {
                 setTimeout(() => {
-                    const windowWidth = window.innerWidth;
-                    const windowHeight = window.innerHeight;
-                    
-                    if (windowWidth > windowHeight) {
-                        // Landscape
-                        video.style.width = '100vw';
-                        video.style.height = '100vh';
-                        video.style.objectFit = 'cover';
-                    } else {
-                        // Portrait
-                        video.style.width = '100vw';
-                        video.style.height = '100vh';
-                        video.style.objectFit = 'cover';
-                    }
+                    adjustVideoSize();
                 }, 300);
             });
             
-            // Initial orientation setup
-            if (window.matchMedia("(orientation: landscape)").matches) {
-                video.style.width = '100vw';
-                video.style.height = '100vh';
-                video.style.objectFit = 'cover';
-            } else {
-                video.style.width = '100vw';
-                video.style.height = '100vh';
-                video.style.objectFit = 'cover';
-            }
+            // Initial size adjustment
+            adjustVideoSize();
         }
     }
     
-    // Function to add play button if autoplay fails
+    // Function to adjust video size based on device orientation and screen size
+    function adjustVideoSize() {
+        if (!video) return;
+        
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        const isLandscape = windowWidth > windowHeight;
+        
+        // Set video dimensions for better mobile fit
+        video.style.width = '100vw';
+        video.style.height = '100vh';
+        
+        // For portrait mode on mobile (common issue)
+        if (!isLandscape && isMobile()) {
+            // Make video wider to ensure it covers the screen width
+            video.style.width = 'auto';
+            video.style.height = '100vh';
+            video.style.minWidth = '100vw';
+            
+            // Center the video horizontally
+            video.style.position = 'absolute';
+            video.style.left = '50%';
+            video.style.transform = 'translateX(-50%)';
+        }
+        
+        // Ensure proper object-fit
+        video.style.objectFit = 'cover';
+    }
+    
+    // Function to add play button if autoplay fails (not for mobile)
     function addPlayButton() {
         if (!document.querySelector('.video-play-button')) {
             const playButton = document.createElement('button');
