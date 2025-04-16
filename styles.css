@@ -173,6 +173,22 @@ a {
     object-fit: contain;
 }
 
+/* KMT Logo with white rounded rectangle background */
+.kmt-logo-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kmt-logo {
+    height: 28px;
+    max-width: 180px;
+    object-fit: contain;
+}
+
 .buttons {
     margin-top: 2rem;
     display: flex;
@@ -282,6 +298,24 @@ a {
         width: 100vw;
         object-position: center;
     }
+    
+    /* Responsive logo adjustments */
+    .logo-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .kmt-logo-container {
+        padding: 8px 12px;
+    }
+    
+    .kmt-logo {
+        height: 24px;
+    }
+    
+    .logo {
+        height: 32px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -299,6 +333,14 @@ a {
     
     .modal-content {
         padding: 1rem;
+    }
+    
+    .kmt-logo {
+        height: 20px;
+    }
+    
+    .logo {
+        height: 28px;
     }
 }
 
@@ -373,4 +415,12 @@ footer {
 footer p {
     font-size: 0.9rem;
     color: #888;
+}
+
+/* Responsive footer adjustments */
+@media (max-width: 768px) {
+    .footer-logos {
+        flex-direction: column;
+        gap: 1rem;
+    }
 }
