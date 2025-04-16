@@ -3,110 +3,47 @@ document.addEventListener('DOMContentLoaded', () => {
     const photos = [
         {
             id: 1,
-            title: "[示例] 三民主義墨跡",
-            description: "示例內容：孫中山先生親筆書寫之三民主義墨跡（此為示例，請替換為實際內容）",
+            title: "[示例] 國父墨跡",
+            description: "示例內容：國父墨跡（此為示例，請替換為實際內容）",
             date: "示例日期",
             photographer: "示例來源：黨史館典藏",
-            src: "images/photos/photo1.jpg",
+            src: "images/007.jpg",
             tags: ["calligraphy"]
         },
         {
             id: 2,
-            title: "[示例] 孫文手稿",
-            description: "示例內容：孫中山先生親筆手稿（此為示例，請替換為實際內容）",
+            title: "[示例] 孫文影像",
+            description: "示例內容：孫中山先生影像（此為示例，請替換為實際內容）",
             date: "示例日期",
             photographer: "示例來源：黨史館典藏",
-            src: "images/photos/photo2.jpg",
+            src: "images/009.jpg",
             tags: ["calligraphy"]
         },
         {
             id: 3,
-            title: "[示例] 建國方略手稿",
-            description: "示例內容：孫中山先生建國方略之手稿文件（此為示例，請替換為實際內容）",
-            date: "示例日期",
-            photographer: "示例來源：黨史館典藏",
-            src: "images/photos/photo3.jpg",
-            tags: ["documents"]
-        },
-        {
-            id: 4,
             title: "[示例] 革命文獻",
             description: "示例內容：與革命相關之歷史文獻（此為示例，請替換為實際內容）",
             date: "示例日期",
             photographer: "示例來源：黨史館典藏",
-            src: "images/photos/photo4.jpg",
+            src: "images/革命文獻4~6輯.pdf",
             tags: ["documents"]
         },
         {
-            id: 5,
-            title: "[示例] 中國國民黨成立文件",
-            description: "示例內容：中國國民黨成立時期之重要文件（此為示例，請替換為實際內容）",
-            date: "示例日期",
-            photographer: "示例來源：黨史館典藏",
-            src: "images/photos/photo5.jpg",
-            tags: ["documents"]
-        },
-        {
-            id: 6,
-            title: "[示例] 《五權憲法》墨跡",
-            description: "示例內容：孫中山先生親筆撰寫之五權憲法墨跡（此為示例，請替換為實際內容）",
-            date: "示例日期",
-            photographer: "示例來源：黨史館典藏",
-            src: "images/photos/photo6.jpg",
-            tags: ["calligraphy"]
-        },
-        {
-            id: 7,
-            title: "[示例] 同盟會誓詞",
-            description: "示例內容：中國同盟會成立時之入會誓詞（此為示例，請替換為實際內容）",
-            date: "示例日期",
-            photographer: "示例來源：黨史館典藏",
-            src: "images/photos/photo7.jpg",
-            tags: ["documents"]
-        },
-        {
-            id: 8,
-            title: "[示例] 革命文獻",
-            description: "示例內容：革命相關文獻（此為示例，請替換為實際內容）",
-            date: "示例日期",
-            photographer: "示例來源：黨史館典藏",
-            src: "images/photos/photo8.jpg",
-            tags: ["documents"]
-        },
-        {
-            id: 9,
-            title: "[示例] 國父遺囑",
-            description: "示例內容：孫中山先生臨終前親筆書寫之遺囑（此為示例，請替換為實際內容）",
-            date: "示例日期",
-            photographer: "示例來源：黨史館典藏",
-            src: "images/photos/photo9.jpg",
-            tags: ["documents"]
-        },
-        {
-            id: 10,
+            id: 4,
             title: "[示例] 國父墨寶",
             description: "示例內容：孫中山先生親筆墨寶（此為示例，請替換為實際內容）",
             date: "示例日期",
             photographer: "示例來源：黨史館典藏",
-            src: "images/photos/photo10.jpg",
+            src: "images/011.jpg",
             tags: ["calligraphy"]
         },
         {
-            id: 11,
-            title: "[示例] 《革命方略》手稿",
-            description: "示例內容：孫中山先生親筆撰寫之革命方略手稿（此為示例，請替換為實際內容）",
-            date: "示例日期",
-            photographer: "示例來源：黨史館典藏",
-            src: "images/photos/photo11.jpg",
-            tags: ["documents"]
-        },
-        {
-            id: 12,
+            id: 5,
             title: "[示例] 中山先生墨跡",
-            description: "示例內容：孫中山先生親筆墨跡（此為示例，請替換為實際內容）",
+            description: "示例內容：孫中山先生墨跡（此為示例，請替換為實際內容）",
             date: "示例日期",
             photographer: "示例來源：黨史館典藏",
-            src: "images/photos/photo12.jpg",
+            src: "images/005.jpg",
             tags: ["calligraphy"]
         }
     ];
@@ -222,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    function getTagName(
+    function getTagName(tag) {
         const tagNames = {
             'calligraphy': '國父墨跡',
             'documents': '革命文獻'
