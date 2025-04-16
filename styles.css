@@ -167,8 +167,15 @@ a {
     gap: 1.5rem;
 }
 
+/* Capture logo styling */
+.capture-logo-container {
+    display: flex;
+    align-items: center;
+    height: 52px; /* Match height of KMT logo container (28px logo + 12px*2 padding) */
+}
+
 .logo {
-    height: 40px;
+    height: 36px; /* Adjusted to better match KMT logo visual weight */
     max-width: 180px;
     object-fit: contain;
 }
@@ -181,6 +188,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 52px; /* Explicitly set height to match Capture logo container */
 }
 
 .kmt-logo {
