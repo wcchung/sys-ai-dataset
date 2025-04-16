@@ -21,10 +21,10 @@ sun-yat-sen-archive/
 ├── gallery.css           # Gallery-specific styles
 ├── main.js               # Main JavaScript for landing page
 ├── gallery.js            # Gallery JavaScript functionality
-├── KMT banner.mp4        # Background video
 ├── images/               # Image assets
 │   ├── numbers-logo.png  # Partner logos
-│   └── kmt-studio-logo.png
+│   ├── kmt-studio-logo.png
+│   └── KMT banner.mp4    # Background video
 └── images/photos/        # Gallery content
     ├── photo1.jpg
     ├── photo2.jpg
@@ -74,7 +74,7 @@ Replace the placeholder images in the `images/photos/` directory with actual pho
 
 ### Changing Background Video
 
-Replace the video file (`KMT banner.mp4`) in the root directory with your own MP4 video. Make sure it is high-quality and has good contrast for readability of the text overlay. For optimal performance, consider compressing the video to an appropriate size while maintaining quality.
+Replace the video file (`images/KMT banner.mp4`) in the images directory with your own MP4 video. Make sure it is high-quality and has good contrast for readability of the text overlay. For optimal performance, consider compressing the video to an appropriate size while maintaining quality.
 
 ### Adding More Photos
 
