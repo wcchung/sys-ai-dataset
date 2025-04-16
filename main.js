@@ -1,23 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Background Image Rotation
-    const backgrounds = [
-        'images/001.jpg',
-        'images/005.jpg',
-        'images/007.jpg',
-        'images/009.jpg',
-        'images/011.jpg'
-    ];
-
-    let currentBg = 0;
-    const landingContainer = document.querySelector('.landing-container');
+    // Video background handling
+    const video = document.getElementById('background-video');
     
-    function changeBackground() {
-        currentBg = (currentBg + 1) % backgrounds.length;
-        landingContainer.style.backgroundImage = `url('${backgrounds[currentBg]}')`;
-    }
-    
-    // Change background every 3 seconds
-    setInterval(changeBackground, 3000);
+    // Ensure video loops properly
+    video.addEventListener('ended', () => {
+        video.play();
+    });
     
     // Modal functionality
     const modal = document.getElementById('infoModal');
