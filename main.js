@@ -2,6 +2,41 @@ document.addEventListener('DOMContentLoaded', () => {
     // Video background handling
     const video = document.getElementById('background-video');
     
+    // Try to ensure video plays
+    try {
+        // Some browsers require user interaction before playing
+        // We'll try to play it anyway and catch any errors
+        const playPromise = video.play();
+        
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                // Autoplay started successfully
+                console.log('Video playing successfully');
+            }).catch(error => {
+                // Autoplay was prevented
+                console.log('Autoplay prevented:', error);
+                // Add a visible play button as fallback
+                addPlayButton(video);
+            });
+        }
+    } catch (e) {
+        console.error('Error playing video:', e);
+        addPlayButton(video);
+    }
+    
+    // Function to add a play button if autoplay is blocked
+    function addPlayButton(videoElement) {
+        const playButton = document.createElement('button');
+        playButton.innerHTML = 'Play Video';
+        playButton.className = 'video-play-button';
+        playButton.addEventListener('click', () => {
+            videoElement.play();
+            playButton.style.display = 'none';
+        });
+        
+        document.querySelector('.landing-container').appendChild(playButton);
+    }
+    
     // Ensure video loops properly
     video.addEventListener('ended', () => {
         video.play();
