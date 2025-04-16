@@ -26,6 +26,28 @@ a {
     text-decoration: underline;
 }
 
+/* Video Play Button (for autoplay fallback) */
+.video-play-button {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.video-play-button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
 /* Landing Page Styles */
 .landing-container {
     height: 100vh;
@@ -37,6 +59,7 @@ a {
     overflow: hidden;
 }
 
+/* Video Background */
 #background-video {
     position: absolute;
     top: 0;
@@ -45,6 +68,42 @@ a {
     height: 100%;
     object-fit: cover;
     z-index: -1;
+    background: url('images/KMT banner.png') no-repeat center center;
+    background-size: cover;
+}
+
+/* Mobile-specific video handling */
+@media (max-width: 768px) {
+    #background-video {
+        height: 100%;
+        width: 100vw;
+        object-position: center;
+    }
+    
+    /* For portrait mode - make video match height and align to the right */
+    @media (orientation: portrait) {
+        #background-video {
+            width: auto;
+            min-width: 100%;
+            height: 100vh;
+            position: absolute;
+            left: auto;
+            right: 0;
+            transform: none;
+            object-position: right center;
+        }
+    }
+}
+
+/* Fallback image for browsers that don't support video */
+.fallback-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
 }
 
 .landing-container::before {
@@ -54,7 +113,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0); /* Changed from 0.6 to 0 to make it fully transparent */
     z-index: 0;
 }
 
@@ -108,8 +167,32 @@ a {
     gap: 1.5rem;
 }
 
+/* Capture logo styling */
+.capture-logo-container {
+    display: flex;
+    align-items: center;
+    height: 52px; /* Match height of KMT logo container (28px logo + 12px*2 padding) */
+}
+
 .logo {
-    height: 40px;
+    height: 36px; /* Adjusted to better match KMT logo visual weight */
+    max-width: 180px;
+    object-fit: contain;
+}
+
+/* KMT Logo with white rounded rectangle background */
+.kmt-logo-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px; /* Explicitly set height to match Capture logo container */
+}
+
+.kmt-logo {
+    height: 28px;
     max-width: 180px;
     object-fit: contain;
 }
@@ -217,6 +300,30 @@ a {
         width: 95%;
         padding: 1.5rem;
     }
+
+    #background-video {
+        height: 100%;
+        width: 100vw;
+        object-position: center;
+    }
+    
+    /* Responsive logo adjustments */
+    .logo-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .kmt-logo-container {
+        padding: 8px 12px;
+    }
+    
+    .kmt-logo {
+        height: 24px;
+    }
+    
+    .logo {
+        height: 32px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -234,6 +341,32 @@ a {
     
     .modal-content {
         padding: 1rem;
+    }
+    
+    .kmt-logo {
+        height: 20px;
+    }
+    
+    .logo {
+        height: 28px;
+    }
+}
+
+/* Custom styles for Arc browser */
+@supports (-webkit-app-region: drag) {
+    #background-video {
+        position: fixed;
+    }
+    
+    .landing-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0); /* Changed from 0.4 to 0 to make it fully transparent */
+        z-index: -1;
     }
 }
 
@@ -290,4 +423,12 @@ footer {
 footer p {
     font-size: 0.9rem;
     color: #888;
+}
+
+/* Responsive footer adjustments */
+@media (max-width: 768px) {
+    .footer-logos {
+        flex-direction: column;
+        gap: 1rem;
+    }
 }

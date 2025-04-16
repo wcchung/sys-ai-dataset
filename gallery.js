@@ -1,113 +1,50 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Sample photo data - in a real implementation, this would be loaded from a JSON file or API
+    // Sample photo data - THIS IS PLACEHOLDER CONTENT ONLY
     const photos = [
         {
             id: 1,
-            title: "立法院議場佔領第一天",
-            description: "學生佔領立法院議場，抗議兩岸服貿協議黑箱作業",
-            date: "2014-03-18",
-            photographer: "張良一",
-            src: "images/photos/photo1.jpg",
-            tags: ["legislative-yuan", "protest"]
+            title: "[示例] 國父墨跡",
+            description: "示例內容：國父墨跡（此為示例，請替換為實際內容）",
+            date: "示例日期",
+            photographer: "示例來源：黨史館典藏",
+            src: "images/007.jpg",
+            tags: ["calligraphy"]
         },
         {
             id: 2,
-            title: "立法院外民眾支持",
-            description: "民眾在立法院外表達支持",
-            date: "2014-03-19",
-            photographer: "吳逸驊",
-            src: "images/photos/photo2.jpg",
-            tags: ["legislative-yuan", "people"]
+            title: "[示例] 孫文影像",
+            description: "示例內容：孫中山先生影像（此為示例，請替換為實際內容）",
+            date: "示例日期",
+            photographer: "示例來源：黨史館典藏",
+            src: "images/009.jpg",
+            tags: ["calligraphy"]
         },
         {
             id: 3,
-            title: "行政院衝突現場",
-            description: "行政院抗議活動中的衝突場景",
-            date: "2014-03-23",
-            photographer: "黃彥傑",
-            src: "images/photos/photo3.jpg",
-            tags: ["executive-yuan", "protest"]
+            title: "[示例] 革命文獻",
+            description: "示例內容：與革命相關之歷史文獻（此為示例，請替換為實際內容）",
+            date: "示例日期",
+            photographer: "示例來源：黨史館典藏",
+            src: "images/革命文獻4~6輯.pdf",
+            tags: ["documents"]
         },
         {
             id: 4,
-            title: "太陽花運動領袖發言",
-            description: "學生代表在議場內發表演說",
-            date: "2014-03-25",
-            photographer: "鐘聖雄",
-            src: "images/photos/photo4.jpg",
-            tags: ["legislative-yuan", "people"]
+            title: "[示例] 國父墨寶",
+            description: "示例內容：孫中山先生親筆墨寶（此為示例，請替換為實際內容）",
+            date: "示例日期",
+            photographer: "示例來源：黨史館典藏",
+            src: "images/011.jpg",
+            tags: ["calligraphy"]
         },
         {
             id: 5,
-            title: "立法院外夜間集會",
-            description: "支持者在立法院外舉行燭光集會",
-            date: "2014-03-28",
-            photographer: "余志偉",
-            src: "images/photos/photo5.jpg",
-            tags: ["legislative-yuan", "protest"]
-        },
-        {
-            id: 6,
-            title: "行政院抗議",
-            description: "抗議者在行政院門前集結",
-            date: "2014-03-24",
-            photographer: "黃彥傑",
-            src: "images/photos/photo6.jpg",
-            tags: ["executive-yuan", "protest"]
-        },
-        {
-            id: 7,
-            title: "議場內部討論",
-            description: "學生在議場內討論接下來的行動方針",
-            date: "2014-03-22",
-            photographer: "張良一",
-            src: "images/photos/photo7.jpg",
-            tags: ["legislative-yuan", "people"]
-        },
-        {
-            id: 8,
-            title: "警民對峙",
-            description: "警察與抗議民眾在行政院外對峙",
-            date: "2014-03-24",
-            photographer: "吳逸驊",
-            src: "images/photos/photo8.jpg",
-            tags: ["executive-yuan", "protest"]
-        },
-        {
-            id: 9,
-            title: "太陽花",
-            description: "抗議民眾手持向日葵，成為運動象徵",
-            date: "2014-03-30",
-            photographer: "余志偉",
-            src: "images/photos/photo9.jpg",
-            tags: ["protest", "people"]
-        },
-        {
-            id: 10,
-            title: "330大遊行",
-            description: "反服貿大遊行，數十萬人參與",
-            date: "2014-03-30",
-            photographer: "鐘聖雄",
-            src: "images/photos/photo10.jpg",
-            tags: ["protest"]
-        },
-        {
-            id: 11,
-            title: "議場內睡袋區",
-            description: "學生在立法院議場內搭建臨時休息區",
-            date: "2014-03-26",
-            photographer: "張良一",
-            src: "images/photos/photo11.jpg",
-            tags: ["legislative-yuan"]
-        },
-        {
-            id: 12,
-            title: "撤離議場前",
-            description: "學生準備撤離議場前的最後時刻",
-            date: "2014-04-10",
-            photographer: "余志偉",
-            src: "images/photos/photo12.jpg",
-            tags: ["legislative-yuan", "people"]
+            title: "[示例] 中山先生墨跡",
+            description: "示例內容：孫中山先生墨跡（此為示例，請替換為實際內容）",
+            date: "示例日期",
+            photographer: "示例來源：黨史館典藏",
+            src: "images/005.jpg",
+            tags: ["calligraphy"]
         }
     ];
 
@@ -224,10 +161,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function getTagName(tag) {
         const tagNames = {
-            'legislative-yuan': '立法院',
-            'executive-yuan': '行政院',
-            'protest': '抗議現場',
-            'people': '人物'
+            'calligraphy': '國父墨跡',
+            'documents': '革命文獻'
         };
         
         return tagNames[tag] || tag;

@@ -1,3 +1,13 @@
+.placeholder-notice {
+    background-color: #f8d7da;
+    color: #842029;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 500;
+}
+
 /* Gallery Specific Styles */
 .gallery-container {
     max-width: 1200px;

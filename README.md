@@ -1,11 +1,11 @@
-# Sunflower Movement 10th Anniversary Image Archive
+# 孫中山逝世100週年 AI 人工智慧歷史資料集
 
-This is a static website clone of the [Sunflower318 Numbers Protocol site](https://sunflower318.numbersprotocol.io/), commemorating the 10th anniversary of Taiwan's Sunflower Movement. The site includes a landing page and a photo gallery with filtering capabilities.
+This is a static website for the [Sun Yat-sen 100th Anniversary Memorial](https://kmt.studio/) project by KMT Studio and Numbers Protocol. The site features a collection of historical documents, calligraphy, letters, and photos related to Dr. Sun Yat-sen, presented as an open AI training dataset.
 
 ## Features
 
 - Responsive design for all device sizes
-- Landing page with rotating background images
+- Landing page with video background
 - "Learn more" modal with historical context
 - Photo gallery with tag-based filtering
 - Detailed photo view with metadata
@@ -14,21 +14,18 @@ This is a static website clone of the [Sunflower318 Numbers Protocol site](https
 ## Project Structure
 
 ```
-sunflower-archive/
+sun-yat-sen-archive/
 ├── index.html              # Landing page
-├── gallery.html           # Photo gallery page
+├── gallery.html           # Gallery page for historical documents
 ├── styles.css             # Main stylesheet
 ├── gallery.css           # Gallery-specific styles
 ├── main.js               # Main JavaScript for landing page
 ├── gallery.js            # Gallery JavaScript functionality
 ├── images/               # Image assets
-│   ├── bg1.jpg           # Background rotation images
-│   ├── bg2.jpg
-│   ├── bg3.jpg
-│   ├── bg4.jpg
 │   ├── numbers-logo.png  # Partner logos
-│   └── philosophy-photography-logo.png
-└── images/photos/        # Gallery photo content
+│   ├── kmt-studio-logo.png
+│   └── KMT banner.mp4    # Background video
+└── images/photos/        # Gallery content
     ├── photo1.jpg
     ├── photo2.jpg
     └── ...
@@ -41,7 +38,6 @@ sunflower-archive/
 - Git installed on your computer
 - A GitHub account
 - Basic knowledge of HTML, CSS, and JavaScript (for modifications)
-- Node.js and npm installed on your computer
 
 ### Local Development
 
@@ -51,34 +47,24 @@ sunflower-archive/
    cd sunflower-archive
    ```
 
-2. Install the `gh-pages` package globally:
-   ```
-   npm install -g gh-pages
-   ```
+2. Open `index.html` in your browser to view the site locally.
 
-3. Open `index.html` in your browser to view the site locally.
-
-4. Make any desired changes to the HTML, CSS, or JavaScript files.
+3. Make any desired changes to the HTML, CSS, or JavaScript files.
 
 ### Hosting on GitHub Pages
 
-1. Build the project:
-   ```
-   npm run build
-   ```
-
-2. Push your repository to GitHub:
+1. Push your repository to GitHub:
    ```
    git add .
    git commit -m "Initial commit"
    git push origin main
    ```
 
-3. Go to your repository on GitHub and navigate to Settings > Pages.
+2. Go to your repository on GitHub and navigate to Settings > Pages.
 
-4. Under "Source", select the branch you want to deploy (usually "main") and click "Save".
+3. Under "Source", select the branch you want to deploy (usually "main") and click "Save".
 
-5. GitHub will provide you with a URL where your site is published (usually in the format `https://your-username.github.io/sunflower-archive/`).
+4. GitHub will provide you with a URL where your site is published (usually in the format `https://your-username.github.io/sunflower-archive/`).
 
 ## Customization
 
@@ -86,9 +72,9 @@ sunflower-archive/
 
 Replace the placeholder images in the `images/photos/` directory with actual photos from the Sunflower Movement. Update the photo metadata in the `gallery.js` file to match your new images.
 
-### Changing Background Images
+### Changing Background Video
 
-Replace the background images (`bg1.jpg`, `bg2.jpg`, etc.) in the `images/` directory with your own images. Make sure they are high-quality and have good contrast for readability of the text overlay.
+Replace the video file (`images/KMT banner.mp4`) in the images directory with your own MP4 video. Make sure it is high-quality and has good contrast for readability of the text overlay. For optimal performance, consider compressing the video to an appropriate size while maintaining quality.
 
 ### Adding More Photos
 
@@ -99,10 +85,10 @@ To add more photos to the gallery, simply add new entries to the `photos` array 
 This project is a clone of the original [Sunflower318 Numbers Protocol site](https://sunflower318.numbersprotocol.io/).
 
 Original site credits:
-- Image project curated by: 哲攝 (Philosophy Photography)
-- Collaborating photographers: 張良一, 吳逸驊, 黃彥傑, 鐘聖雄, 余志偉
+- Collection curated by: 中國國民黨 (KMT, Kuomintang)
+- Chief Editor: 中華民國各界紀念國父百年誕辰籌備委員會
 - Technical support: Numbers Protocol
-- Sponsored by: Google nDX Taiwan News Digital Innovation Project
+- Sponsored by: 中國國民黨黨史館
 
 ## License
 
