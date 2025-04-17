@@ -50,10 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 })
                 .catch(error => {
                     console.log("Auto-play was prevented:", error);
-                    // Don't add play button on mobile - iOS will use the poster image instead
-                    if (!isMobile()) {
-                        addPlayButton();
-                    }
+                    // Video play button disabled - using poster image as fallback
                 });
         }, 500);
         
@@ -112,20 +109,5 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Ensure proper object-fit
         video.style.objectFit = 'cover';
-    }
-    
-    // Function to add play button if autoplay fails (not for mobile)
-    function addPlayButton() {
-        if (!document.querySelector('.video-play-button')) {
-            const playButton = document.createElement('button');
-            playButton.innerHTML = 'Play Video';
-            playButton.className = 'video-play-button';
-            document.querySelector('.landing-container').appendChild(playButton);
-            
-            playButton.addEventListener('click', () => {
-                video.play();
-                playButton.style.display = 'none';
-            });
-        }
     }
 });
