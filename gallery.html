@@ -46,6 +46,7 @@
             display: flex;
             flex-direction: column;
             margin-bottom: 40px;
+            text-align: center;
         }
         
         .brand-title {
@@ -56,6 +57,7 @@
             line-height: 32px;
             color: #FFFFFF;
             margin-bottom: 10px;
+            text-align: center;
         }
         
         .brand-subtitle {
@@ -65,6 +67,7 @@
             font-size: 16px;
             line-height: 24px;
             color: #FFFFFF;
+            text-align: center;
         }
         
         .divider {
@@ -76,18 +79,6 @@
         
         .tag-section {
             margin-top: 20px;
-        }
-        
-        .tag-label {
-            font-family: 'Zen Old Mincho', serif;
-            font-style: normal;
-            font-weight: 600;
-            font-size: 16px;
-            line-height: 24px;
-            text-align: center;
-            color: #FFFFFF;
-            width: 32px;
-            margin-bottom: 20px;
         }
         
         .tag-filter {
@@ -107,6 +98,24 @@
             transition: color 0.3s ease;
             width: 100%;
             text-align: left;
+            position: relative;
+        }
+        
+        .tag-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #DAA520;
+            transition: width 0.3s ease;
+            max-width: 204px;
+        }
+        
+        .tag-item:hover::after,
+        .tag-item.active::after {
+            width: 204px;
         }
         
         .tag-item.active {
@@ -123,10 +132,11 @@
         }
         
         .content-header {
-            position: sticky;
-            top: 0;
+            position: fixed;
+            top: 40px;
+            left: 286px;
+            right: 46px;
             background: #0A0A0A;
-            padding-bottom: 20px;
             z-index: 10;
         }
         
@@ -180,7 +190,17 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: 20px;
-            padding-top: 30px;
+            padding-top: 100px;  /* Added spacing for fixed header */
+        }
+        
+        .disclaimer {
+            margin-top: 20px;
+            font-size: 10px;
+            color: #CCCCCC;
+            text-align: center;
+            width: 100%;
+            max-width: 204px;
+            line-height: 1.4;
         }
         
         .footer-logos {
@@ -206,6 +226,13 @@
         .kmt-logo-container {
             padding: 5px;
         }
+        
+        .copyright {
+            font-size: 12px;
+            color: #CCCCCC;
+            text-align: center;
+            margin-top: 10px;
+        }
     </style>
     <script
         type="module"
@@ -228,7 +255,6 @@
                 <div class="divider"></div>
                 
                 <div class="tag-section">
-                    <div class="tag-label">tag</div>
                     <ul class="tag-filter">
                         <li class="tag-item active" data-tag="all">所有文獻</li>
                         <li class="tag-item" data-tag="calligraphy">國父墨跡</li>
@@ -238,7 +264,12 @@
                 
                 <div class="divider"></div>
                 
-                <!-- Footer logos - now stacked vertically -->
+                <!-- Disclaimer text -->
+                <div class="disclaimer">
+                    本影像資料庫為非營利專案，由 Capture 提供智能授權功能。若想使用影像與 AI 訓練，請於頁面操作取得授權，或與 KMT studio 聯繫取得授權。
+                </div>
+                
+                <!-- Footer logos - stacked vertically -->
                 <div class="footer-logos">
                     <a href="https://captureapp.xyz/" target="_blank">
                         <div class="capture-logo-container">
@@ -250,6 +281,7 @@
                             <img src="images/kmtstudio-logotype-long.png" alt="KMT Studio" class="kmt-logo">
                         </div>
                     </a>
+                    <div class="copyright">© 2025 All rights reserved.</div>
                 </div>
             </div>
         </div>
