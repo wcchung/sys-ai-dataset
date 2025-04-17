@@ -182,3 +182,66 @@
         gap: 1rem;
     }
 }
+
+/* Capture Eye Specific Styles */
+.photo-item capture-eye {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+media-viewer {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.capture-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+    color: #fff;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.photo-item:hover .capture-info {
+    opacity: 1;
+}
+
+.capture-info h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+}
+
+.capture-date, .capture-desc, .capture-photographer {
+    margin: 0.2rem 0;
+    font-size: 0.8rem;
+}
+
+.capture-photographer {
+    opacity: 0.7;
+}
+
+.capture-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Customize Capture Eye modal appearance */
+capture-eye::part(modal) {
+    max-width: 90vw;
+    background-color: #191919;
+    border-radius: 8px;
+    color: #fff;
+}
+
+capture-eye::part(overlay) {
+    background-color: rgba(0, 0, 0, 0.9);
+}
