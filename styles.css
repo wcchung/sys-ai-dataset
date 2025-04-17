@@ -11,12 +11,6 @@ body {
     background-color: #000;
     color: #fff;
     line-height: 1.6;
-    color-scheme: only light; /* Prevent browsers from applying dark theme to light elements */
-}
-
-/* Prevent browsers from overriding our background colors in dark mode */
-:root {
-    color-scheme: dark;
 }
 
 /* Heading font family - only defined once */
@@ -316,13 +310,24 @@ a {
     
     .landing-content {
         width: 100%;
-        padding: 0 13px;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        transform: none;
+        left: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center align all content horizontally */
     }
     
     .title-container {
         width: 100%;
         height: auto;
-        margin-top: -60px;
+        position: absolute;
+        top: 254px; /* Fixed position from top */
+        margin: 0;
+        text-align: center;
     }
     
     .main-title {
@@ -332,29 +337,38 @@ a {
         line-height: 44px; /* Adjusted line height for better spacing */
         margin: 0 auto 30px;
         white-space: nowrap; /* Prevent line breaks within the title */
+        text-align: center;
     }
     
     .subtitle {
         width: 344px;
         font-size: 24px; /* Increased from 16px to be more proportional to the mobile title */
         line-height: 32px; /* Increased line height to match the new font size */
-        margin-bottom: 60px;
+        margin: 0 auto;
+        text-align: center;
     }
     
     .powered-by {
-        margin: 60px 0 25px;
+        position: absolute;
+        top: 466px; /* 466px from top as specified */
+        width: 100%;
+        margin: 0; /* Remove existing margins */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
     .powered-by p {
         font-size: 16px;
         margin-bottom: 25px;
+        text-align: center;
     }
     
     .logo-container {
         gap: 24px;
+        justify-content: center;
     }
     
-    /* Adjusted logo sizes for mobile */
     .capture-logo-container {
         width: 140px;
         height: 34px; /* Adjusted based on aspect ratio of 4.13:1 */
@@ -371,15 +385,30 @@ a {
     }
     
     .buttons {
-        margin-top: 40px;
+        position: absolute;
+        top: 622px; /* Position buttons container at Enter button location */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center align buttons */
+        margin: 0; /* Remove existing margins */
+        padding: 0;
+        text-align: center;
     }
     
     .enter-btn {
+        margin: 0 auto 20px;
+        width: 160px;
+        height: 55px;
+        font-size: 20px;
         position: relative;
-        margin: 0 auto;
-        width: 160px; /* Reduced from 220px */
-        height: 55px; /* Reduced from 80px */
-        font-size: 20px; /* Reduced from 24px */
+    }
+    
+    .learn-more {
+        position: relative;
+        margin: 0;
+        top: auto;
+        left: auto;
     }
 }
 
@@ -421,16 +450,11 @@ a {
 @media (prefers-color-scheme: dark) {
     /* For dark mode browsers like Brave that override background colors */
     .kmt-logo-container {
-        background-color: rgb(30, 30, 30) !important; /* Solid dark background color */
+        background-color: #333333 !important; /* Dark but visible background */
         border: 1px solid rgba(255, 255, 255, 0.3) !important; /* Subtle border for definition */
     }
     
-    /* Use alternative logo with better visibility in dark mode by inverting colors */
-    .kmt-logo {
-        filter: invert(1) hue-rotate(180deg) !important; /* Invert colors for better visibility */
-    }
-    
-    /* Make sure the Enter button remains visible */
+    /* Instead of inverting the logo, we're going to add a more visible border */
     .enter-btn {
         border: 1px solid rgba(255, 255, 255, 0.5) !important;
     }
