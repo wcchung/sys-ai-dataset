@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>孫中山逝世100週年 - AI 人工智慧歷史資料集 (Gallery)</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="gallery.css">
+    <script src="gallery-redirect.js"></script>
+    <style>
+        /* Mobile-specific styles based on designer specs */
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000000;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        
+        .gallery-mobile {
+            position: relative;
+            width: 100%;
+            max-width: 375px;
+            min-height: 100vh;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        .header {
+            padding: 0 16px;
+        }
+        
+        .brand-title {
+            width: 220px;
+            height: 64px;
+            margin-left: calc(50% - 220px/2 - 61.5px);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 32px;
+            color: #FFFFFF;
+        }
+        
+        .brand-subtitle {
+            width: 220px;
+            height: 48px;
+            margin-left: calc(50% - 220px/2 - 61.5px);
+            margin-top: 10px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            color: #FFFFFF;
+        }
+        
+        .divider {
+            width: 344px;
+            height: 0px;
+            margin: 20px auto;
+            border: 0.5px solid #444444;
+        }
+        
+        .tag-section {
+            display: flex;
+            justify-content: center;
+            margin: 20px 16px;
+        }
+        
+        .tag-filter {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            justify-content: space-around;
+        }
+        
+        .tag-item {
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 24px;
+            color: #FFFFFF;
+            transition: color 0.3s ease;
+            text-align: center;
+        }
+        
+        .tag-item.active {
+            color: #DAA520;
+        }
+        
+        .content-section {
+            padding: 0 16px;
+            margin-top: 90px;
+        }
+        
+        .tag-selected {
+            width: 271px;
+            height: 32px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 32px;
+            color: #FFFFFF;
+        }
+        
+        .results-count {
+            width: 101px;
+            height: 24px;
+            margin-top: 10px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            color: #FFFFFF;
+        }
+        
+        .content-divider {
+            width: 344px;
+            height: 0px;
+            margin: 20px auto;
+            border: 0.5px solid #444444;
+        }
+        
+        .photo-grid {
+            width: 344px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding: 0 16px;
+        }
+        
+        .disclaimer {
+            font-size: 10px;
+            color: #CCCCCC;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .footer-logos {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .capture-logo-container,
+        .kmt-logo-container {
+            height: 34.43px;
+            display: flex;
+        }
+        
+        .logo {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .kmt-logo-container {
+            padding: 5px;
+        }
+        
+        .copyright {
+            font-size: 12px;
+            color: #CCCCCC;
+            margin-top: 10px;
+            text-align: left;
+        }
+        
+        /* Loading indicator styles */
+        .loading-indicator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 3rem 0;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #DAA520;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Error message styles */
+        .error-message {
+            padding: 2rem;
+            text-align: center;
+            color: #f8d7da;
+            background-color: rgba(220, 53, 69, 0.1);
+            border: 1px solid rgba(220, 53, 69, 0.3);
+            border-radius: 5px;
+            margin: 2rem 0;
+        }
+        
+        .no-results {
+            padding: 3rem 0;
+            text-align: center;
+            color: #ddd;
+            font-size: 1.2rem;
+        }
+    </style>
+    <script
+        type="module"
+        src="https://cdn.jsdelivr.net/npm/@numbersprotocol/capture-eye@latest/dist/capture-eye.bundled.js"
+    ></script>
+</head>
+<body>
+    <div class="gallery-mobile">
+        <!-- Header -->
+        <div class="header">
+            <div class="brand-title">孫中山逝世<span class="gold-text">100</span>週年</div>
+            <div class="brand-subtitle">AI 人工智慧歷史資料集</div>
+        </div>
+        
+        <!-- Top divider -->
+        <div class="divider"></div>
+        
+        <!-- Tag section -->
+        <div class="tag-section">
+            <ul class="tag-filter">
+                <li class="tag-item active" data-tag="all">所有文獻</li>
+                <li class="tag-item" data-tag="calligraphy">國父墨跡</li>
+                <li class="tag-item" data-tag="documents">革命文獻</li>
+            </ul>
+        </div>
+        
+        <!-- Bottom tag divider -->
+        <div class="divider"></div>
+        
+        <!-- Content section -->
+        <div class="content-section">
+            <div class="tag-selected">所有文獻</div>
+            <div class="results-count">共 <span id="item-count">0</span> 筆</div>
+            
+            <!-- Content divider -->
+            <div class="content-divider"></div>
+            
+            <!-- Photo grid -->
+            <div class="photo-grid" id="photoGrid">
+                <!-- Photos will be loaded here via JavaScript -->
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div class="disclaimer">
+                本影像資料庫為非營利專案，由 Capture 提供智能授權功能。若想使用影像與 AI 訓練，請於頁面操作取得授權，或與 KMT studio 聯繫取得授權。
+            </div>
+            
+            <div class="footer-logos">
+                <a href="https://captureapp.xyz/" target="_blank">
+                    <div class="capture-logo-container">
+                        <img src="images/Capture_logo.webp" alt="Capture App" class="logo">
+                    </div>
+                </a>
+                <a href="https://kmt.studio/" target="_blank">
+                    <div class="kmt-logo-container">
+                        <img src="images/kmtstudio-logotype-long.png" alt="KMT Studio" class="kmt-logo">
+                    </div>
+                </a>
+            </div>
+            <div class="copyright">© 2025 All rights reserved.</div>
+        </div>
+    </div>
+    
+    <script src="gallery.js"></script>
+</body>
+</html>
