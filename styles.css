@@ -162,8 +162,8 @@ a {
 /* Capture logo styling */
 .capture-logo-container {
     position: relative;
-    width: 168px;
-    height: 39px;
+    width: 180px;
+    height: 44px; /* Adjusted based on actual aspect ratio of 4.13:1 */
     display: flex;
     align-items: center;
 }
@@ -356,8 +356,8 @@ a {
     
     /* Adjusted logo sizes for mobile */
     .capture-logo-container {
-        width: 140px; /* Increased from 132px */
-        height: 34px; /* Increased from 31px */
+        width: 140px;
+        height: 34px; /* Adjusted based on aspect ratio of 4.13:1 */
     }
     
     .kmt-logo-container {
@@ -408,7 +408,7 @@ a {
     /* Adjust individual logo containers for smaller screens */
     .capture-logo-container {
         width: 110px;
-        height: 26px;
+        height: 27px; /* Adjusted based on aspect ratio of 4.13:1 */
     }
     
     .kmt-logo-container {
@@ -419,15 +419,15 @@ a {
 
 /* Dark mode adjustments */
 @media (prefers-color-scheme: dark) {
-    /* Keep white background but make it slightly dimmed for better contrast in dark mode */
+    /* For dark mode browsers like Brave that override background colors */
     .kmt-logo-container {
-        background-color: #FFFFFF !important; /* Keep white background */
-        border: 1px solid rgba(255, 255, 255, 0.6) !important; /* More visible border */
+        background-color: rgb(30, 30, 30) !important; /* Solid dark background color */
+        border: 1px solid rgba(255, 255, 255, 0.3) !important; /* Subtle border for definition */
     }
     
-    /* Adjust the logo for better visibility in dark mode */
+    /* Use alternative logo with better visibility in dark mode by inverting colors */
     .kmt-logo {
-        filter: brightness(0.7) contrast(1.5) !important; /* Darken the logo slightly for better visibility */
+        filter: invert(1) hue-rotate(180deg) !important; /* Invert colors for better visibility */
     }
     
     /* Make sure the Enter button remains visible */
@@ -490,6 +490,11 @@ footer {
 .footer-logos .kmt-logo-container {
     width: 200px;
     height: 48px;
+}
+
+.footer-logos .capture-logo-container {
+    width: 165px;
+    height: 40px;
 }
 
 footer p {
