@@ -5,11 +5,23 @@
     box-sizing: border-box;
 }
 
+/* Base font for entire site */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: #000;
     color: #fff;
     line-height: 1.6;
+}
+
+/* Heading font family - only defined once */
+.main-title, .subtitle, .modal-text {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 600;
+}
+
+/* Resetting font weight for modal text to normal */
+.modal-text {
+    font-weight: 400;
 }
 
 a {
@@ -26,37 +38,13 @@ a {
     text-decoration: underline;
 }
 
-/* Video Play Button (for autoplay fallback) */
-.video-play-button {
-    position: absolute;
-    z-index: 10;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 15px 30px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    border: 2px solid white;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: all 0.3s ease;
-}
-
-.video-play-button:hover {
-    background-color: rgba(0, 0, 0, 0.9);
-    transform: translate(-50%, -50%) scale(1.05);
-}
-
 /* Landing Page Styles */
 .landing-container {
     height: 100vh;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
     overflow: hidden;
+    background: transparent; /* Changed from #0A0A0A to transparent */
 }
 
 /* Video Background */
@@ -67,32 +55,11 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
+    z-index: 0; /* Changed from -1 to 0 */
     background: url('images/KMT banner.png') no-repeat center center;
     background-size: cover;
-}
-
-/* Mobile-specific video handling */
-@media (max-width: 768px) {
-    #background-video {
-        height: 100%;
-        width: 100vw;
-        object-position: center;
-    }
-    
-    /* For portrait mode - make video match height and align to the right */
-    @media (orientation: portrait) {
-        #background-video {
-            width: auto;
-            min-width: 100%;
-            height: 100vh;
-            position: absolute;
-            left: auto;
-            right: 0;
-            transform: none;
-            object-position: right center;
-        }
-    }
+    border-radius: 10px;
+    display: block; /* Explicitly set display property */
 }
 
 /* Fallback image for browsers that don't support video */
@@ -106,117 +73,151 @@ a {
     z-index: -2;
 }
 
-.landing-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* Changed from 0.6 to 0 to make it fully transparent */
-    z-index: 0;
+/* Mobile-specific video handling */
+@media (max-width: 768px) {
+    #background-video, .fallback-image {
+        width: auto;
+        min-width: 100%;
+        height: 100vh;
+        position: absolute;
+        left: auto;
+        right: 0;
+        transform: none;
+        object-position: right center;
+    }
 }
 
 .landing-content {
-    position: relative;
+    position: absolute;
     z-index: 2;
     text-align: center;
-    padding: 2rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 1200px;
+}
+
+.title-container {
+    width: 1200px;
+    height: 124px;
+    margin: 0 auto;
+    position: relative;
 }
 
 .main-title {
-    font-size: 3.5rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
+    font-size: 60px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    position: relative;
+    width: 1200px;
+    margin: 0 auto 50px;
 }
 
 .subtitle {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    font-weight: 500;
+    font-size: 45px; /* Reverted back to original */
+    line-height: 20px; /* Reverted back to original */
+    text-align: center;
+    color: #FFFFFF;
+    position: relative;
+    width: 738px;
+    margin: 0 auto 80px;
 }
 
 .white-text {
-    color: #fff;
+    color: #FFFFFF;
 }
 
 .gold-text {
-    color: #DAA520;
-}
-
-.date-location {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    font-weight: 300;
+    color: #E0B122;
 }
 
 .powered-by {
-    margin: 2rem 0;
+    margin: 80px 0 40px;
 }
 
 .powered-by p {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-    opacity: 0.8;
+    font-size: 20px;
+    line-height: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 20px;
 }
 
 .logo-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
+    gap: 69px;
+    position: relative;
 }
 
 /* Capture logo styling */
 .capture-logo-container {
+    position: relative;
+    width: 180px;
+    height: 44px; /* Adjusted based on actual aspect ratio of 4.13:1 */
     display: flex;
     align-items: center;
-    height: 52px; /* Match height of KMT logo container (28px logo + 12px*2 padding) */
 }
 
 .logo {
-    height: 36px; /* Adjusted to better match KMT logo visual weight */
-    max-width: 180px;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 }
 
 /* KMT Logo with white rounded rectangle background */
 .kmt-logo-container {
-    background-color: white;
+    background-color: #FFFFFF !important; /* Important flag to override browser styles */
+    forced-color-adjust: none; /* Prevents Windows high contrast mode from changing colors */
     border-radius: 10px;
-    padding: 12px 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 52px; /* Explicitly set height to match Capture logo container */
+    width: 220px;  /* Increased width to better maintain logo proportion */
+    height: 52px;  /* Adjusted height to match reference while maintaining visibility */
+    padding: 8px 12px; /* Adjusted padding to give logo more space */
 }
 
 .kmt-logo {
-    height: 28px;
-    max-width: 180px;
+    width: 100%;
+    height: 36px;  /* Fixed height to ensure logo visibility */
+    max-width: 196px; /* Control maximum width */
     object-fit: contain;
+    border-radius: 0;  /* Removed border radius from logo itself */
 }
 
 .buttons {
-    margin-top: 2rem;
+    margin-top: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 20px;
 }
 
 .btn {
     display: inline-block;
-    padding: 0.8rem 2.5rem;
-    border-radius: 50px;
-    font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .enter-btn {
-    background-color: #fff;
-    color: #000;
+    background-color: #FFFFFF !important; /* Important flag to override browser styles */
+    forced-color-adjust: none; /* Prevents Windows high contrast mode from changing colors */
+    color: #000000;
+    font-size: 24px;
+    line-height: 16px;
+    text-align: center;
+    width: 220px;
+    height: 80px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border: 1px solid #FFFFFF;
 }
 
 .enter-btn:hover {
@@ -224,13 +225,15 @@ a {
 }
 
 .learn-more {
-    font-size: 0.9rem;
-    opacity: 0.8;
-    text-decoration: underline;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+    text-decoration-line: underline;
+    color: #FFFFFF;
 }
 
 .learn-more:hover {
-    opacity: 1;
+    opacity: 0.8;
 }
 
 /* Modal Styles */
@@ -261,6 +264,7 @@ a {
 .modal-text {
     line-height: 1.8;
     margin-bottom: 2rem;
+    font-weight: 400;
 }
 
 .modal-text p {
@@ -287,86 +291,156 @@ a {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1512px) {
+    .title-container,
     .main-title {
-        font-size: 2.5rem;
+        width: 90%;
+        max-width: 1200px;
     }
     
     .subtitle {
-        font-size: 1.8rem;
+        width: 90%;
+        max-width: 738px;
     }
-    
-    .modal-content {
-        width: 95%;
-        padding: 1.5rem;
-    }
+}
 
-    #background-video {
-        height: 100%;
-        width: 100vw;
-        object-position: center;
+/* Mobile design based on Figma specs for 375px width, 812px height */
+@media (max-width: 768px) {
+    /* The video positioning is handled by the mobile-specific video handling above */
+    
+    .landing-content {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        padding: 0 0 70px; /* Added bottom padding to account for mobile browser toolbars */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        top: 0;
+        left: 0;
+        transform: none;
+        overflow-y: auto; /* Allow scrolling if content doesn't fit */
     }
     
-    /* Responsive logo adjustments */
-    .logo-container {
+    .title-container {
+        width: 90%;
+        max-width: 349px;
+        height: auto;
+        position: relative;
+        margin-top: calc(200px / 812px * 100vh); /* Reduced from 254px to move content up */
+        text-align: center;
+    }
+    
+    .main-title {
+        width: 100%;
+        max-width: 349px;
+        font-size: 32px; /* Reduced from 40px to prevent line breaks */
+        line-height: 44px; /* Adjusted line height for better spacing */
+        margin: 0 auto 30px;
+        white-space: nowrap; /* Prevent line breaks within the title */
+        text-align: center;
+    }
+    
+    .subtitle {
+        width: 344px;
+        font-size: 24px; /* Increased from 16px to be more proportional to the mobile title */
+        line-height: 32px; /* Increased line height to match the new font size */
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .powered-by {
+        width: 100%;
+        position: relative;
+        margin-top: calc((466px - 254px - 124px) / 812px * 100vh); /* Spacing after title container */
+        display: flex;
         flex-direction: column;
-        gap: 1rem;
+        align-items: center;
+    }
+    
+    .powered-by p {
+        font-size: 16px;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+    
+    .logo-container {
+        gap: 24px;
+        justify-content: center;
+    }
+    
+    .capture-logo-container {
+        width: 140px;
+        height: 34px; /* Adjusted based on aspect ratio of 4.13:1 */
     }
     
     .kmt-logo-container {
-        padding: 8px 12px;
+        width: 190px; /* Increased from 180px */
+        height: 46px; /* Increased from 42px */
+        padding: 6px 10px;
     }
     
     .kmt-logo {
-        height: 24px;
+        height: 34px; /* Increased from 30px */
     }
     
-    .logo {
-        height: 32px;
+    .buttons {
+        width: 100%;
+        position: relative;
+        margin-top: calc((600px - 466px - 100px) / 812px * 100vh); /* Adjusted spacing to ensure visibility */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 0 30px; /* Added bottom padding to ensure learn more button is visible */
+        text-align: center;
+        margin-bottom: 20px; /* Add extra bottom margin */
+    }
+    
+    .enter-btn {
+        margin: 0 auto 20px;
+        width: 160px;
+        height: 55px;
+        font-size: 20px;
+    }
+    
+    .learn-more {
+        position: relative;
+        margin: 0;
     }
 }
 
 @media (max-width: 480px) {
     .main-title {
-        font-size: 2rem;
+        width: 90%;
+        max-width: 349px;
+        font-size: 36px;
+        line-height: 48px;
     }
     
     .subtitle {
-        font-size: 1.5rem;
+        width: 90%;
+        max-width: 344px;
+        font-size: 22px; /* Increased from 16px to be more proportional to the main title */
+        line-height: 28px; /* Added appropriate line height */
     }
     
-    .date-location {
-        font-size: 1rem;
+    /* Keep logos horizontal even on very small screens */
+    .logo-container {
+        flex-direction: row;
+        gap: 15px;
+        flex-wrap: nowrap;
     }
     
-    .modal-content {
-        padding: 1rem;
+    /* Adjust individual logo containers for smaller screens */
+    .capture-logo-container {
+        width: 110px;
+        height: 27px; /* Adjusted based on aspect ratio of 4.13:1 */
     }
     
-    .kmt-logo {
-        height: 20px;
-    }
-    
-    .logo {
-        height: 28px;
-    }
-}
-
-/* Custom styles for Arc browser */
-@supports (-webkit-app-region: drag) {
-    #background-video {
-        position: fixed;
-    }
-    
-    .landing-container::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0); /* Changed from 0.4 to 0 to make it fully transparent */
-        z-index: -1;
+    .kmt-logo-container {
+        width: 150px;
+        height: 40px;
     }
 }
 
@@ -418,6 +492,17 @@ footer {
     align-items: center;
     gap: 2rem;
     margin-bottom: 1.5rem;
+}
+
+/* Updated footer logo containers to match main logo styles */
+.footer-logos .kmt-logo-container {
+    width: 200px;
+    height: 48px;
+}
+
+.footer-logos .capture-logo-container {
+    width: 165px;
+    height: 40px;
 }
 
 footer p {
