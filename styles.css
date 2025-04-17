@@ -15,7 +15,7 @@ body {
 
 /* Heading font family - only defined once */
 .main-title, .subtitle, .modal-text {
-    font-family: 'Zen Old Mincho', serif;
+    font-family: Georgia, "Times New Roman", serif;
     font-weight: 600;
 }
 
