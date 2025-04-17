@@ -122,8 +122,8 @@ a {
 }
 
 .subtitle {
-    font-size: 45px;
-    line-height: 20px;
+    font-size: 52px; /* Increased from 45px to be more proportional to the main title */
+    line-height: 40px; /* Increased from 20px to match the new font size better */
     text-align: center;
     color: #FFFFFF;
     position: relative;
@@ -356,18 +356,18 @@ a {
     
     /* Adjusted logo sizes for mobile */
     .capture-logo-container {
-        width: 132px;
-        height: 31px;
+        width: 140px; /* Increased from 132px */
+        height: 34px; /* Increased from 31px */
     }
     
     .kmt-logo-container {
-        width: 180px; /* Increased from 132px to better maintain logo proportion */
-        height: 42px; /* Adjusted from 50.4px for better proportions */
-        padding: 6px 10px; /* Added padding for mobile */
+        width: 190px; /* Increased from 180px */
+        height: 46px; /* Increased from 42px */
+        padding: 6px 10px;
     }
     
     .kmt-logo {
-        height: 30px; /* Explicit height for mobile */
+        height: 34px; /* Increased from 30px */
     }
     
     .buttons {
@@ -377,6 +377,9 @@ a {
     .enter-btn {
         position: relative;
         margin: 0 auto;
+        width: 160px; /* Reduced from 220px */
+        height: 55px; /* Reduced from 80px */
+        font-size: 20px; /* Reduced from 24px */
     }
 }
 
@@ -410,6 +413,25 @@ a {
     .kmt-logo-container {
         width: 150px;
         height: 40px;
+    }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+    /* For dark mode browsers like Brave that override background colors */
+    .kmt-logo-container {
+        background-color: rgba(30, 30, 30, 0.8) !important; /* Darker but not pure black */
+        border: 1px solid rgba(255, 255, 255, 0.3) !important; /* Subtle border for definition */
+    }
+    
+    /* Use alternative logo with better visibility in dark mode by inverting colors */
+    .kmt-logo {
+        filter: invert(1) hue-rotate(180deg) !important; /* Invert colors for better visibility */
+    }
+    
+    /* Make sure the Enter button remains visible */
+    .enter-btn {
+        border: 1px solid rgba(255, 255, 255, 0.5) !important;
     }
 }
 
