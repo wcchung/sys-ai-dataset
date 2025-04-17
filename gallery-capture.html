@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>孫中山逝世100週年 - AI 人工智慧歷史資料集</title>
+    <title>孫中山逝世100週年 - AI 人工智慧歷史資料集 (Capture Eye)</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="gallery.css">
+    <script
+        type="module"
+        src="https://cdn.jsdelivr.net/npm/@numbersprotocol/capture-eye@latest/dist/capture-eye.bundled.js"
+    ></script>
 </head>
 <body>
     <header>
@@ -25,31 +29,11 @@
     
     <main>
         <div class="gallery-container">
-            <div class="placeholder-notice">
-                <p>注意：以下內容僅為示例，請替換為實際的歷史資料與影像。</p>
-            </div>
             <div class="photo-grid" id="photoGrid">
                 <!-- Photos will be loaded here via JavaScript -->
             </div>
         </div>
     </main>
-    
-    <!-- Photo Modal -->
-    <div id="photoModal" class="modal photo-modal">
-        <div class="modal-content photo-modal-content">
-            <span class="close-photo-modal">&times;</span>
-            <div class="photo-details">
-                <img id="modalPhoto" src="" alt="">
-                <div class="photo-info">
-                    <h3 id="photoTitle"></h3>
-                    <p id="photoDescription"></p>
-                    <p id="photoDate"></p>
-                    <p id="photoCredit"></p>
-                    <div id="photoTags" class="photo-tags"></div>
-                </div>
-            </div>
-        </div>
-    </div>
     
     <footer>
         <div class="footer-container">
@@ -69,6 +53,6 @@
         </div>
     </footer>
     
-    <script src="gallery.js"></script>
+    <script src="gallery-capture.js"></script>
 </body>
 </html>

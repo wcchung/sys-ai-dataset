@@ -1,13 +1,3 @@
-.placeholder-notice {
-    background-color: #f8d7da;
-    color: #842029;
-    padding: 1rem;
-    margin-bottom: 2rem;
-    border-radius: 5px;
-    text-align: center;
-    font-weight: 500;
-}
-
 /* Gallery Specific Styles */
 .gallery-container {
     max-width: 1200px;
@@ -69,109 +59,6 @@
     transform: scale(1.02);
 }
 
-.photo-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.photo-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.photo-item:hover .photo-overlay {
-    opacity: 1;
-}
-
-.photo-title {
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin-bottom: 0.3rem;
-}
-
-.photo-date {
-    font-size: 0.8rem;
-    opacity: 0.8;
-}
-
-/* Photo Modal Styles */
-.photo-modal-content {
-    max-width: 1000px;
-    background-color: #111;
-    padding: 0;
-}
-
-.close-photo-modal {
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #fff;
-    z-index: 5;
-}
-
-.photo-details {
-    display: flex;
-    flex-direction: column;
-}
-
-.photo-details img {
-    width: 100%;
-    max-height: 70vh;
-    object-fit: contain;
-}
-
-.photo-info {
-    padding: 1.5rem;
-}
-
-.photo-info h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.8rem;
-}
-
-.photo-info p {
-    margin-bottom: 0.5rem;
-}
-
-.photo-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1rem;
-}
-
-.photo-tag {
-    background-color: #222;
-    padding: 0.3rem 0.8rem;
-    border-radius: 50px;
-    font-size: 0.8rem;
-}
-
-@media (min-width: 768px) {
-    .photo-details {
-        flex-direction: row;
-    }
-    
-    .photo-details img {
-        width: 55%;
-        max-height: 80vh;
-    }
-    
-    .photo-info {
-        width: 45%;
-        padding: 2rem;
-    }
-}
-
 @media (max-width: 768px) {
     .tag-filter {
         gap: 1rem;
@@ -181,4 +68,122 @@
         grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
         gap: 1rem;
     }
+}
+
+/* Capture Eye Specific Styles */
+.photo-item capture-eye {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+media-viewer {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Customize Capture Eye modal appearance */
+capture-eye::part(modal) {
+    max-width: 90vw;
+    background-color: #191919;
+    border-radius: 8px;
+    color: #fff;
+}
+
+capture-eye::part(overlay) {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Loading indicator styles */
+.loading-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 3rem 0;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #DAA520;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Error message styles */
+.error-message {
+    padding: 2rem;
+    text-align: center;
+    color: #f8d7da;
+    background-color: rgba(220, 53, 69, 0.1);
+    border: 1px solid rgba(220, 53, 69, 0.3);
+    border-radius: 5px;
+    margin: 2rem 0;
+}
+
+.no-results {
+    padding: 3rem 0;
+    text-align: center;
+    color: #ddd;
+    font-size: 1.2rem;
+}
+
+/* File Preview Styles */
+.file-preview {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1a1a;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.pdf-preview {
+    background-color: #2d1e1e;
+}
+
+.document-preview {
+    background-color: #252216;
+}
+
+.file-icon {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.file-info {
+    text-align: center;
+    width: 100%;
+}
+
+.file-title {
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.file-type {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    color: #ddd;
 }
