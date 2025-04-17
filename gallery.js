@@ -142,9 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return `
                 <div class="file-preview pdf-preview">
                     <div class="file-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64">
-                            <path fill="#FF5252" d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M9.5,11.5V6.5H8V11.5H9.5M12.5,11.5V6.5H11V11.5H12.5M15.5,11.5V6.5H14V11.5H15.5M9.5,17.5V12.5H8V17.5H9.5M12.5,17.5V12.5H11V17.5H12.5M15.5,17.5V12.5H14V17.5H15.5Z"/>
-                        </svg>
+                        <img src="images/PDF Preview Icon.png" alt="PDF Icon" style="width: 100%; max-width: 120px; height: auto;">
                     </div>
                     <div class="file-info">
                         <div class="file-title">${title}</div>
@@ -158,9 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return `
             <div class="file-preview document-preview">
                 <div class="file-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64">
-                        <path fill="#FFCA28" d="M13,9H18.5L13,3.5V9M6,2H14L20,8V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V4C4,2.89 4.89,2 6,2M15,18V16H6V18H15M18,14V12H6V14H18Z"/>
-                    </svg>
+                    <img src="images/Document Icon.png" alt="Document Icon" style="width: 100%; max-width: 120px; height: auto;">
                 </div>
                 <div class="file-info">
                     <div class="file-title">${title}</div>
