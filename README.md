@@ -1,33 +1,34 @@
 # 孫中山逝世100週年 AI 人工智慧歷史資料集
 
-This is a static website for the [Sun Yat-sen 100th Anniversary Memorial](https://kmt.studio/) project by KMT Studio and Numbers Protocol. The site features a collection of historical documents, calligraphy, letters, and photos related to Dr. Sun Yat-sen, presented as an open AI training dataset.
+This is a static website for the [Sun Yat-sen 100th Anniversary Memorial](https://kmt.studio/) project by KMT Studio and Capture. The site features a collection of historical documents, calligraphy, letters, and photos related to Dr. Sun Yat-sen, presented as an open AI training dataset with blockchain verification.
 
 ## Features
 
 - Responsive design for all device sizes
 - Landing page with video background
 - "Learn more" modal with historical context
-- Photo gallery with tag-based filtering
-- Detailed photo view with metadata
+- Blockchain-verified gallery with Capture Eye integration
+- Dynamic content loading from Numbers Protocol API
+- Support for various file types including PDFs
 - Mobile-friendly navigation
 
 ## Project Structure
 
 ```
 sun-yat-sen-archive/
-├── index.html              # Landing page
-├── gallery.html           # Gallery page for historical documents
-├── styles.css             # Main stylesheet
-├── gallery.css           # Gallery-specific styles
-├── main.js               # Main JavaScript for landing page
-├── gallery.js            # Gallery JavaScript functionality
-├── images/               # Image assets
-│   ├── numbers-logo.png  # Partner logos
-│   ├── kmt-studio-logo.png
-│   └── KMT banner.mp4    # Background video
-└── images/photos/        # Gallery content
-    ├── photo1.jpg
-    ├── photo2.jpg
+├── index.html              # Landing 
+├── main.js                 # Main JavaScript for landing page
+├── styles.css              # Main stylesheet
+├── gallery-capture.html    # Gallery page with Capture Eye integration
+├── gallery-capture.js      # Gallery JavaScript with Numbers API integration
+├── gallery.css             # Gallery-specific styles
+├── images/                 # Image assets
+│   ├── Capture_logo.webp   # Partner logos
+│   ├── kmtstudio-logotype-long.png
+│   └── KMT banner.mp4      # Background video
+└── sample_files/           # Sample content (not used in production)
+    ├── 001.jpg
+    ├── 005.jpg
     └── ...
 ```
 
@@ -43,8 +44,8 @@ sun-yat-sen-archive/
 
 1. Clone this repository:
    ```
-   git clone https://github.com/your-username/sunflower-archive.git
-   cd sunflower-archive
+   git clone https://github.com/your-username/sun-yat-sen-archive.git
+   cd sun-yat-sen-archive
    ```
 
 2. Open `index.html` in your browser to view the site locally.
@@ -64,31 +65,30 @@ sun-yat-sen-archive/
 
 3. Under "Source", select the branch you want to deploy (usually "main") and click "Save".
 
-4. GitHub will provide you with a URL where your site is published (usually in the format `https://your-username.github.io/sunflower-archive/`).
+4. GitHub will provide you with a URL where your site is published (usually in the format `https://your-username.github.io/sun-yat-sen-archive/`).
 
 ## Customization
 
-### Adding Real Photos
+### API Integration
 
-Replace the placeholder images in the `images/photos/` directory with actual photos from the Sunflower Movement. Update the photo metadata in the `gallery.js` file to match your new images.
+The gallery uses Numbers Protocol API to fetch verified assets. To use your own assets:
+
+1. Create an account in any [Capture Product](https://captureapp.xyz/)
+2. Upload your assets or taking picture using Capture solutions
+3. Update the `ACCOUNT` constant in `gallery-capture.js` with your account email
 
 ### Changing Background Video
 
-Replace the video file (`images/KMT banner.mp4`) in the images directory with your own MP4 video. Make sure it is high-quality and has good contrast for readability of the text overlay. For optimal performance, consider compressing the video to an appropriate size while maintaining quality.
-
-### Adding More Photos
-
-To add more photos to the gallery, simply add new entries to the `photos` array in `gallery.js` following the existing pattern.
+Replace the video file (`images/KMT banner.mp4`) with your own background video. Make sure it has good contrast for readability of the text overlay.
 
 ## Credits
 
-This project is a clone of the original [Sunflower318 Numbers Protocol site](https://sunflower318.numbersprotocol.io/).
-
-Original site credits:
 - Collection curated by: 中國國民黨 (KMT, Kuomintang)
 - Chief Editor: 中華民國各界紀念國父百年誕辰籌備委員會
-- Technical support: Numbers Protocol
+- Technical support: Capture Team
 - Sponsored by: 中國國民黨黨史館
+
+*This project is a clone of the original [Sunflower318 Numbers Protocol site](https://sunflower318.numbersprotocol.io/).
 
 ## License
 
