@@ -312,7 +312,7 @@ a {
         width: 100%;
         height: 100vh;
         position: relative;
-        padding: 0;
+        padding: 0 0 70px; /* Added bottom padding to account for mobile browser toolbars */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -320,6 +320,7 @@ a {
         top: 0;
         left: 0;
         transform: none;
+        overflow-y: auto; /* Allow scrolling if content doesn't fit */
     }
     
     .title-container {
@@ -327,7 +328,7 @@ a {
         max-width: 349px;
         height: auto;
         position: relative;
-        margin-top: calc(254px / 812px * 100vh); /* ~31.3% from top */
+        margin-top: calc(200px / 812px * 100vh); /* Reduced from 254px to move content up */
         text-align: center;
     }
     
@@ -387,12 +388,13 @@ a {
     .buttons {
         width: 100%;
         position: relative;
-        margin-top: calc((622px - 466px - 100px) / 812px * 100vh); /* Spacing after powered by */
+        margin-top: calc((600px - 466px - 100px) / 812px * 100vh); /* Adjusted spacing to ensure visibility */
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 0;
+        padding: 0 0 30px; /* Added bottom padding to ensure learn more button is visible */
         text-align: center;
+        margin-bottom: 20px; /* Add extra bottom margin */
     }
     
     .enter-btn {
