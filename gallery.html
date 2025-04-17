@@ -9,10 +9,6 @@
     <style>
         /* Designer-specified styles */
         body {
-            margin: 0;
-            padding: 0;
-            background: #0A0A0A;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             overflow-x: hidden;
         }
         
@@ -22,7 +18,6 @@
             max-width: 1512px;
             min-height: 100vh;
             margin: 0 auto;
-            background: #0A0A0A;
             display: flex;
         }
         
@@ -46,28 +41,17 @@
             display: flex;
             flex-direction: column;
             margin-bottom: 40px;
-            text-align: left;
         }
         
         .brand-title {
-            font-family: 'Zen Old Mincho', serif;
-            font-style: normal;
-            font-weight: 600;
             font-size: 24px;
             line-height: 32px;
-            color: #FFFFFF;
             margin-bottom: 10px;
-            text-align: left;
         }
         
         .brand-subtitle {
-            font-family: 'Zen Old Mincho', serif;
-            font-style: normal;
-            font-weight: 600;
             font-size: 16px;
             line-height: 24px;
-            color: #FFFFFF;
-            text-align: left;
         }
         
         .divider {
@@ -94,7 +78,6 @@
             cursor: pointer;
             padding: 8px 0;
             font-size: 16px;
-            color: #FFFFFF;
             transition: color 0.3s ease;
             width: 100%;
             text-align: left;
@@ -127,7 +110,6 @@
             padding-right: 46px;
             width: calc(100% - 332px);
             min-height: 100vh;
-            padding-top: 0;
             padding-bottom: 40px;
         }
         
@@ -149,23 +131,15 @@
         }
         
         .tag-selected {
-            font-family: 'Zen Old Mincho', serif;
-            font-style: normal;
-            font-weight: 600;
             font-size: 24px;
             line-height: 32px;
-            color: #FFFFFF;
             width: 460px;
         }
         
         .results-count {
-            font-family: 'Zen Old Mincho', serif;
-            font-style: normal;
-            font-weight: 600;
             font-size: 16px;
             line-height: 24px;
             text-align: right;
-            color: #FFFFFF;
         }
         
         .horizontal-divider {
@@ -197,7 +171,7 @@
         .disclaimer {
             font-size: 10px;
             color: #CCCCCC;
-            text-align: center;
+            text-align: left;
             width: 100%;
             max-width: 204px;
             line-height: 1.4;
@@ -213,6 +187,7 @@
             max-width: 204px;
             display: flex;
             flex-direction: column;
+            align-items: flex-start;
             gap: 15px;
         }
         
@@ -220,21 +195,14 @@
             height: 34.43px;
             width: 100%;
             max-width: 204px;
-        }
-        
-        .logo {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        .kmt-logo-container {
-            padding: 5px;
+            display: flex;
+            justify-content: flex-start;
         }
         
         .copyright {
             font-size: 12px;
             color: #CCCCCC;
-            text-align: center;
+            text-align: left;
             margin-top: 10px;
         }
     </style>
@@ -252,8 +220,8 @@
         <div class="sidebar">
             <div class="sidebar-content">
                 <div class="brand">
-                    <div class="brand-title">孫中山逝世<span class="gold-text">100</span>週年</div>
-                    <div class="brand-subtitle">AI 人工智慧歷史資料集</div>
+                    <div class="brand-title main-title">孫中山逝世<span class="gold-text">100</span>週年</div>
+                    <div class="brand-subtitle subtitle">AI 人工智慧歷史資料集</div>
                 </div>
                 
                 <div class="tag-section">
@@ -292,7 +260,7 @@
         <div class="main-content">
             <div class="content-header">
                 <div class="header-content">
-                    <div class="tag-selected">所有文獻</div>
+                    <div class="tag-selected main-title">所有文獻</div>
                     <div class="results-count">共 <span id="item-count">0</span> 筆</div>
                 </div>
                 <div class="horizontal-divider"></div>
