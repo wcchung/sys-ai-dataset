@@ -5,11 +5,23 @@
     box-sizing: border-box;
 }
 
+/* Base font for entire site */
 body {
-    font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: #000;
     color: #fff;
     line-height: 1.6;
+}
+
+/* Heading font family - only defined once */
+.main-title, .subtitle, .modal-text {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 600;
+}
+
+/* Resetting font weight for modal text to normal */
+.modal-text {
+    font-weight: 400;
 }
 
 a {
@@ -44,9 +56,8 @@ a {
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    background: url('images/KMT banner.png') no-repeat center center;
+    background: #0A0A0A url('images/KMT banner.png') no-repeat center center;
     background-size: cover;
-    border-radius: 10px;
 }
 
 /* Fallback image for browsers that don't support video */
@@ -94,10 +105,7 @@ a {
 }
 
 .main-title {
-    font-family: 'Zen Old Mincho', serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 80px;
+    font-size: 60px;
     line-height: 24px;
     text-align: center;
     color: #FFFFFF;
@@ -107,10 +115,7 @@ a {
 }
 
 .subtitle {
-    font-family: 'Zen Old Mincho', serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 40px;
+    font-size: 45px;
     line-height: 20px;
     text-align: center;
     color: #FFFFFF;
@@ -132,9 +137,6 @@ a {
 }
 
 .powered-by p {
-    font-family: 'Noto Sans', sans-serif;
-    font-style: normal;
-    font-weight: 400;
     font-size: 20px;
     line-height: 16px;
     text-align: center;
@@ -174,10 +176,11 @@ a {
     justify-content: center;
     width: 174px;
     height: 66.44px;
+    padding: 0 16px;
 }
 
 .kmt-logo {
-    width: 100%;
+    width: calc(100% - 16px);
     height: 100%;
     object-fit: contain;
     border-radius: 10px;
@@ -200,9 +203,6 @@ a {
 .enter-btn {
     background-color: #FFFFFF;
     color: #000000;
-    font-family: 'Noto Sans', sans-serif;
-    font-style: normal;
-    font-weight: 400;
     font-size: 24px;
     line-height: 16px;
     text-align: center;
@@ -221,9 +221,6 @@ a {
 }
 
 .learn-more {
-    font-family: 'Noto Sans', sans-serif;
-    font-style: normal;
-    font-weight: 400;
     font-size: 16px;
     line-height: 16px;
     text-align: center;
@@ -263,6 +260,7 @@ a {
 .modal-text {
     line-height: 1.8;
     margin-bottom: 2rem;
+    font-weight: 400;
 }
 
 .modal-text p {
