@@ -56,8 +56,6 @@ a {
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    background: #0A0A0A url('images/KMT banner.png') no-repeat center center;
-    background-size: cover;
 }
 
 /* Fallback image for browsers that don't support video */
@@ -69,7 +67,6 @@ a {
     height: 100%;
     object-fit: cover;
     z-index: -2;
-    border-radius: 10px;
 }
 
 /* Mobile-specific video handling */
