@@ -13,26 +13,33 @@
             padding: 0;
             background: #0A0A0A;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
         }
         
         .gallery-page {
             position: relative;
             width: 100%;
             max-width: 1512px;
-            min-height: 982px;
+            min-height: 100vh;
             margin: 0 auto;
             background: #0A0A0A;
-            overflow: hidden;
+            display: flex;
         }
         
         .sidebar {
-            position: absolute;
-            width: 250px;
+            position: fixed;
+            width: 220px;
             left: 46px;
             top: 40px;
             bottom: 40px;
             display: flex;
             flex-direction: column;
+        }
+        
+        .sidebar-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         
         .brand {
@@ -88,6 +95,8 @@
             flex-direction: column;
             list-style: none;
             gap: 15px;
+            padding: 0;
+            margin: 0;
         }
         
         .tag-item {
@@ -105,14 +114,23 @@
         }
         
         .main-content {
-            position: absolute;
-            left: 286px;
-            right: 46px;
-            top: 40px;
-            bottom: 40px;
+            margin-left: 286px;
+            padding-right: 46px;
+            width: calc(100% - 332px);
+            min-height: 100vh;
+            padding-top: 40px;
+            padding-bottom: 40px;
         }
         
         .content-header {
+            position: sticky;
+            top: 0;
+            background: #0A0A0A;
+            padding-bottom: 20px;
+            z-index: 10;
+        }
+        
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -143,11 +161,11 @@
             width: 100%;
             height: 0;
             border: 0.5px solid #444444;
-            margin: 20px 0;
+            margin: 0;
         }
         
         .vertical-divider {
-            position: absolute;
+            position: fixed;
             width: 902px;
             height: 0;
             left: 266px;
@@ -155,6 +173,7 @@
             border: 0.5px solid #444444;
             transform: rotate(90deg);
             transform-origin: 0 0;
+            z-index: 5;
         }
         
         .photo-grid {
@@ -165,16 +184,27 @@
         }
         
         .footer-logos {
-            position: absolute;
-            left: 46px;
-            bottom: 40px;
+            margin-top: auto;
+            width: 100%;
+            max-width: 204px;
             display: flex;
-            align-items: center;
-            gap: 20px;
+            flex-direction: column;
+            gap: 15px;
         }
         
         .capture-logo-container, .kmt-logo-container {
             height: 34.43px;
+            width: 100%;
+            max-width: 204px;
+        }
+        
+        .logo {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .kmt-logo-container {
+            padding: 5px;
         }
     </style>
     <script
@@ -189,51 +219,54 @@
         
         <!-- Sidebar -->
         <div class="sidebar">
-            <div class="brand">
-                <div class="brand-title">孫中山逝世<span class="gold-text">100</span>週年</div>
-                <div class="brand-subtitle">AI 人工智慧歷史資料集</div>
+            <div class="sidebar-content">
+                <div class="brand">
+                    <div class="brand-title">孫中山逝世<span class="gold-text">100</span>週年</div>
+                    <div class="brand-subtitle">AI 人工智慧歷史資料集</div>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <div class="tag-section">
+                    <div class="tag-label">tag</div>
+                    <ul class="tag-filter">
+                        <li class="tag-item active" data-tag="all">所有文獻</li>
+                        <li class="tag-item" data-tag="calligraphy">國父墨跡</li>
+                        <li class="tag-item" data-tag="documents">革命文獻</li>
+                    </ul>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <!-- Footer logos - now stacked vertically -->
+                <div class="footer-logos">
+                    <a href="https://captureapp.xyz/" target="_blank">
+                        <div class="capture-logo-container">
+                            <img src="images/Capture_logo.webp" alt="Capture App" class="logo">
+                        </div>
+                    </a>
+                    <a href="https://kmt.studio/" target="_blank">
+                        <div class="kmt-logo-container">
+                            <img src="images/kmtstudio-logotype-long.png" alt="KMT Studio" class="kmt-logo">
+                        </div>
+                    </a>
+                </div>
             </div>
-            
-            <div class="divider"></div>
-            
-            <div class="tag-section">
-                <div class="tag-label">tag</div>
-                <ul class="tag-filter">
-                    <li class="tag-item active" data-tag="all">所有文獻</li>
-                    <li class="tag-item" data-tag="calligraphy">國父墨跡</li>
-                    <li class="tag-item" data-tag="documents">革命文獻</li>
-                </ul>
-            </div>
-            
-            <div class="divider"></div>
         </div>
         
         <!-- Main content -->
         <div class="main-content">
             <div class="content-header">
-                <div class="tag-selected">所有文獻</div>
-                <div class="results-count">共 <span id="item-count">0</span> 筆</div>
+                <div class="header-content">
+                    <div class="tag-selected">所有文獻</div>
+                    <div class="results-count">共 <span id="item-count">0</span> 筆</div>
+                </div>
+                <div class="horizontal-divider"></div>
             </div>
-            
-            <div class="horizontal-divider"></div>
             
             <div class="photo-grid" id="photoGrid">
                 <!-- Photos will be loaded here via JavaScript -->
             </div>
-        </div>
-        
-        <!-- Footer logos -->
-        <div class="footer-logos">
-            <a href="https://captureapp.xyz/" target="_blank">
-                <div class="capture-logo-container">
-                    <img src="images/Capture_logo.webp" alt="Capture App" class="logo">
-                </div>
-            </a>
-            <a href="https://kmt.studio/" target="_blank">
-                <div class="kmt-logo-container">
-                    <img src="images/kmtstudio-logotype-long.png" alt="KMT Studio" class="kmt-logo">
-                </div>
-            </a>
         </div>
     </div>
     
