@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>孫中山逝世100週年 - AI 人工智慧歷史資料集 (Gallery)</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="gallery.css">
+    <script src="gallery-redirect.js"></script>
+    <style>
+        /* Designer-specified styles for desktop view */
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0A0A0A;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .gallery-page {
+            position: relative;
+            width: 100%;
+            max-width: 1512px;
+            min-height: 100vh;
+            margin: 0 auto;
+            background: #0A0A0A;
+            display: flex;
+        }
+        
+        .sidebar {
+            position: fixed;
+            width: 220px;
+            left: 46px;
+            top: 40px;
+            bottom: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .sidebar-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .brand {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+        
+        .brand-title {
+            font-family: Georgia, "Times New Roman", serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 32px;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        
+        .brand-subtitle {
+            font-family: Georgia, "Times New Roman", serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            color: #FFFFFF;
+            text-align: left;
+        }
+        
+        .divider {
+            width: 204px;
+            height: 0;
+            border: 0.5px solid #444444;
+            margin: 20px 0;
+        }
+        
+        .tag-section {
+            margin-top: 20px;
+        }
+        
+        .tag-filter {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            gap: 15px;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .tag-item {
+            cursor: pointer;
+            padding: 8px 0;
+            font-size: 16px;
+            color: #FFFFFF;
+            transition: color 0.3s ease;
+            width: 100%;
+            text-align: left;
+            position: relative;
+        }
+        
+        .tag-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #DAA520;
+            transition: width 0.3s ease;
+            max-width: 204px;
+        }
+        
+        .tag-item:hover::after,
+        .tag-item.active::after {
+            width: 204px;
+        }
+        
+        .tag-item.active {
+            color: #DAA520;
+        }
+        
+        .main-content {
+            margin-left: 286px;
+            padding-right: 46px;
+            width: calc(100% - 332px);
+            min-height: 100vh;
+            padding-top: 0;
+            padding-bottom: 40px;
+        }
+        
+        .content-header {
+            position: fixed;
+            top: 0;
+            left: 286px;
+            right: 46px;
+            background: #0A0A0A;
+            z-index: 10;
+            padding-top: 40px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .tag-selected {
+            font-family: 'Zen Old Mincho', serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 32px;
+            color: #FFFFFF;
+            width: 460px;
+        }
+        
+        .results-count {
+            font-family: 'Zen Old Mincho', serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: right;
+            color: #FFFFFF;
+        }
+        
+        .horizontal-divider {
+            width: 100%;
+            height: 0;
+            border: 0.5px solid #444444;
+            margin: 0;
+        }
+        
+        .vertical-divider {
+            position: fixed;
+            width: 902px;
+            height: 0;
+            left: 266px;
+            top: 40px;
+            border: 0.5px solid #444444;
+            transform: rotate(90deg);
+            transform-origin: 0 0;
+            z-index: 5;
+        }
+        
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            padding-top: 100px;  /* Added spacing for fixed header */
+        }
+        
+        .disclaimer {
+            font-size: 10px;
+            color: #CCCCCC;
+            text-align: left;
+            width: 100%;
+            max-width: 204px;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+        
+        .sidebar-footer {
+            margin-top: auto;
+        }
+        
+        .footer-logos {
+            width: 100%;
+            max-width: 204px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .capture-logo-container, .kmt-logo-container {
+            height: 34.43px;
+            width: 100%;
+            max-width: 204px;
+        }
+        
+        .logo {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .kmt-logo-container {
+            padding: 5px;
+        }
+        
+        .copyright {
+            font-size: 12px;
+            color: #CCCCCC;
+            text-align: left;
+            margin-top: 10px;
+        }
+    </style>
+    <script
+        type="module"
+        src="https://cdn.jsdelivr.net/npm/@numbersprotocol/capture-eye@latest/dist/capture-eye.bundled.js"
+    ></script>
+</head>
+<body>
+    <div class="gallery-page">
+        <!-- Vertical divider -->
+        <div class="vertical-divider"></div>
+        
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <div class="brand">
+                    <div class="brand-title">孫中山逝世<span class="gold-text">100</span>週年</div>
+                    <div class="brand-subtitle">AI 人工智慧歷史資料集</div>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <div class="tag-section">
+                    <ul class="tag-filter">
+                        <li class="tag-item active" data-tag="all">所有文獻</li>
+                        <li class="tag-item" data-tag="calligraphy">國父墨跡</li>
+                        <li class="tag-item" data-tag="documents">革命文獻</li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-footer">
+                    <!-- Disclaimer text -->
+                    <div class="disclaimer">
+                        本影像資料庫為非營利專案，由 Capture 提供智能授權功能。若想使用影像與 AI 訓練，請於頁面操作取得授權，或與 KMT studio 聯繫取得授權。
+                    </div>
+                    
+                    <!-- Footer logos - stacked vertically -->
+                    <div class="footer-logos">
+                        <a href="https://captureapp.xyz/" target="_blank">
+                            <div class="capture-logo-container">
+                                <img src="images/Capture_logo.webp" alt="Capture App" class="logo">
+                            </div>
+                        </a>
+                        <a href="https://kmt.studio/" target="_blank">
+                            <div class="kmt-logo-container">
+                                <img src="images/kmtstudio-logotype-long.png" alt="KMT Studio" class="kmt-logo">
+                            </div>
+                        </a>
+                        <div class="copyright">© 2025 All rights reserved.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main content -->
+        <div class="main-content">
+            <div class="content-header">
+                <div class="header-content">
+                    <div class="tag-selected">所有文獻</div>
+                    <div class="results-count">共 <span id="item-count">0</span> 筆</div>
+                </div>
+                <div class="horizontal-divider"></div>
+            </div>
+            
+            <div class="photo-grid" id="photoGrid">
+                <!-- Photos will be loaded here via JavaScript -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="gallery.js"></script>
+</body>
+</html>

@@ -19,17 +19,21 @@ sun-yat-sen-archive/
 ├── index.html              # Landing 
 ├── main.js                 # Main JavaScript for landing page
 ├── styles.css              # Main stylesheet
-├── gallery-capture.html    # Gallery page with Capture Eye integration
-├── gallery-capture.js      # Gallery JavaScript with Numbers API integration
+├── gallery.html            # Gallery page with Capture eye integration (desktop)
+├── gallery-mobile.html     # Mobile-specific gallery page
+├── gallery.js              # JavaScript for gallery pages
+├── gallery-redirect.js     # Device detection for responsive gallery
 ├── gallery.css             # Gallery-specific styles
 ├── images/                 # Image assets
 │   ├── Capture_logo.webp   # Partner logos
 │   ├── kmtstudio-logotype-long.png
 │   └── KMT banner.mp4      # Background video
-└── sample_files/           # Sample content (not used in production)
-    ├── 001.jpg
-    ├── 005.jpg
-    └── ...
+├── sample_files/           # Sample content (not used in production)
+│   ├── 001.jpg
+│   ├── 005.jpg
+│   └── ...
+├── gallery-capture.html    # (not used in production)
+└── gallery-capture.js      # (not used in production)
 ```
 
 ## Setup Instructions
