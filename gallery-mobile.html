@@ -103,11 +103,12 @@
         
         /* Selected tag section */
         .selected-section {
-            padding: 0 16px;
+            padding: 0;
+            margin-left: calc(50% - 220px/2 - 61.5px); /* Match title positioning */
+            width: 220px; /* Match title width */
             background: #000000;
-            margin-top: 20px; /* Added more space */
+            margin-top: 20px;
             position: relative;
-            top: 15px; /* Adjust position to be around 236px from top */
         }
         
         .tag-selected {
@@ -119,7 +120,7 @@
             font-size: 24px;
             line-height: 28px;
             color: #FFFFFF;
-            margin-bottom: 10px; /* Added spacing */
+            margin-bottom: 10px;
         }
         
         .results-count {
