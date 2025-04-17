@@ -122,8 +122,8 @@ a {
 }
 
 .subtitle {
-    font-size: 52px; /* Increased from 45px to be more proportional to the main title */
-    line-height: 40px; /* Increased from 20px to match the new font size better */
+    font-size: 45px; /* Reverted back to original */
+    line-height: 20px; /* Reverted back to original */
     text-align: center;
     color: #FFFFFF;
     position: relative;
@@ -336,8 +336,8 @@ a {
     
     .subtitle {
         width: 344px;
-        font-size: 16px;
-        line-height: 20px;
+        font-size: 24px; /* Increased from 16px to be more proportional to the mobile title */
+        line-height: 32px; /* Increased line height to match the new font size */
         margin-bottom: 60px;
     }
     
@@ -394,7 +394,8 @@ a {
     .subtitle {
         width: 90%;
         max-width: 344px;
-        font-size: 16px;
+        font-size: 22px; /* Increased from 16px to be more proportional to the main title */
+        line-height: 28px; /* Added appropriate line height */
     }
     
     /* Keep logos horizontal even on very small screens */
@@ -418,15 +419,15 @@ a {
 
 /* Dark mode adjustments */
 @media (prefers-color-scheme: dark) {
-    /* For dark mode browsers like Brave that override background colors */
+    /* Keep white background but make it slightly dimmed for better contrast in dark mode */
     .kmt-logo-container {
-        background-color: rgba(30, 30, 30, 0.8) !important; /* Darker but not pure black */
-        border: 1px solid rgba(255, 255, 255, 0.3) !important; /* Subtle border for definition */
+        background-color: #FFFFFF !important; /* Keep white background */
+        border: 1px solid rgba(255, 255, 255, 0.6) !important; /* More visible border */
     }
     
-    /* Use alternative logo with better visibility in dark mode by inverting colors */
+    /* Adjust the logo for better visibility in dark mode */
     .kmt-logo {
-        filter: invert(1) hue-rotate(180deg) !important; /* Invert colors for better visibility */
+        filter: brightness(0.7) contrast(1.5) !important; /* Darken the logo slightly for better visibility */
     }
     
     /* Make sure the Enter button remains visible */
