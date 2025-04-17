@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>孫中山逝世100週年 - AI 人工智慧歷史資料集 (Gallery)</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="gallery.css">
+    <style>
+        /* Designer-specified styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0A0A0A;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        
+        .gallery-page {
+            position: relative;
+            width: 100%;
+            max-width: 1512px;
+            min-height: 982px;
+            margin: 0 auto;
+            background: #0A0A0A;
+            overflow: hidden;
+        }
+        
+        .sidebar {
+            position: absolute;
+            width: 250px;
+            left: 46px;
+            top: 40px;
+            bottom: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .brand {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 40px;
+        }
+        
+        .brand-title {
+            font-family: 'Zen Old Mincho', serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 32px;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+        }
+        
+        .brand-subtitle {
+            font-family: 'Zen Old Mincho', serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            color: #FFFFFF;
+        }
+        
+        .divider {
+            width: 204px;
+            height: 0;
+            border: 0.5px solid #444444;
+            margin: 20px 0;
+        }
+        
+        .tag-section {
+            margin-top: 20px;
+        }
+        
+        .tag-label {
+            font-family: 'Zen Old Mincho', serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: center;
+            color: #FFFFFF;
+            width: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .tag-filter {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            gap: 15px;
+        }
+        
+        .tag-item {
+            cursor: pointer;
+            padding: 8px 0;
+            font-size: 16px;
+            color: #FFFFFF;
+            transition: color 0.3s ease;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .tag-item.active {
+            color: #DAA520;
+        }
+        
+        .main-content {
+            position: absolute;
+            left: 286px;
+            right: 46px;
+            top: 40px;
+            bottom: 40px;
+        }
+        
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .tag-selected {
+            font-family: 'Zen Old Mincho', serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 32px;
+            color: #FFFFFF;
+            width: 460px;
+        }
+        
+        .results-count {
+            font-family: 'Zen Old Mincho', serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: right;
+            color: #FFFFFF;
+        }
+        
+        .horizontal-divider {
+            width: 100%;
+            height: 0;
+            border: 0.5px solid #444444;
+            margin: 20px 0;
+        }
+        
+        .vertical-divider {
+            position: absolute;
+            width: 902px;
+            height: 0;
+            left: 266px;
+            top: 40px;
+            border: 0.5px solid #444444;
+            transform: rotate(90deg);
+            transform-origin: 0 0;
+        }
+        
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            padding-top: 30px;
+        }
+        
+        .footer-logos {
+            position: absolute;
+            left: 46px;
+            bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .capture-logo-container, .kmt-logo-container {
+            height: 34.43px;
+        }
+    </style>
+    <script
+        type="module"
+        src="https://cdn.jsdelivr.net/npm/@numbersprotocol/capture-eye@latest/dist/capture-eye.bundled.js"
+    ></script>
+</head>
+<body>
+    <div class="gallery-page">
+        <!-- Vertical divider -->
+        <div class="vertical-divider"></div>
+        
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="brand">
+                <div class="brand-title">孫中山逝世<span class="gold-text">100</span>週年</div>
+                <div class="brand-subtitle">AI 人工智慧歷史資料集</div>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="tag-section">
+                <div class="tag-label">tag</div>
+                <ul class="tag-filter">
+                    <li class="tag-item active" data-tag="all">所有文獻</li>
+                    <li class="tag-item" data-tag="calligraphy">國父墨跡</li>
+                    <li class="tag-item" data-tag="documents">革命文獻</li>
+                </ul>
+            </div>
+            
+            <div class="divider"></div>
+        </div>
+        
+        <!-- Main content -->
+        <div class="main-content">
+            <div class="content-header">
+                <div class="tag-selected">所有文獻</div>
+                <div class="results-count">共 <span id="item-count">0</span> 筆</div>
+            </div>
+            
+            <div class="horizontal-divider"></div>
+            
+            <div class="photo-grid" id="photoGrid">
+                <!-- Photos will be loaded here via JavaScript -->
+            </div>
+        </div>
+        
+        <!-- Footer logos -->
+        <div class="footer-logos">
+            <a href="https://captureapp.xyz/" target="_blank">
+                <div class="capture-logo-container">
+                    <img src="images/Capture_logo.webp" alt="Capture App" class="logo">
+                </div>
+            </a>
+            <a href="https://kmt.studio/" target="_blank">
+                <div class="kmt-logo-container">
+                    <img src="images/kmtstudio-logotype-long.png" alt="KMT Studio" class="kmt-logo">
+                </div>
+            </a>
+        </div>
+    </div>
+    
+    <script src="gallery.js"></script>
+</body>
+</html>
