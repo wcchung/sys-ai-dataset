@@ -19,8 +19,10 @@ sun-yat-sen-archive/
 ├── index.html              # Landing 
 ├── main.js                 # Main JavaScript for landing page
 ├── styles.css              # Main stylesheet
-├── gallery-capture.html    # Gallery page with Capture Eye integration
-├── gallery-capture.js      # Gallery JavaScript with Numbers API integration
+├── gallery.html            # Gallery page with Capture eye integration (desktop)
+├── gallery-mobile.html     # Mobile-specific gallery page
+├── gallery.js              # JavaScript for gallery pages
+├── gallery-redirect.js     # Device detection for responsive gallery
 ├── gallery.css             # Gallery-specific styles
 ├── images/                 # Image assets
 │   ├── Capture_logo.webp   # Partner logos
