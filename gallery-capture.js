@@ -3,46 +3,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const photos = [
         {
             id: 1,
-            title: "[示例] 國父墨跡",
-            description: "示例內容：國父墨跡（此為示例，請替換為實際內容）",
-            date: "示例日期",
-            photographer: "示例來源：黨史館典藏",
             tags: ["calligraphy"],
             nid: "bafybeiacmqanntukgnfeqpwtckmwpkl22ixiad4fr3ev4dlj4ivu6dzjf4"
         },
         {
             id: 2,
-            title: "[示例] 孫文影像",
-            description: "示例內容：孫中山先生影像（此為示例，請替換為實際內容）",
-            date: "示例日期",
-            photographer: "示例來源：黨史館典藏",
             tags: ["calligraphy"],
             nid: "bafybeiacmqanntukgnfeqpwtckmwpkl22ixiad4fr3ev4dlj4ivu6dzjf4"
         },
         {
             id: 3,
-            title: "[示例] 革命文獻",
-            description: "示例內容：與革命相關之歷史文獻（此為示例，請替換為實際內容）",
-            date: "示例日期",
-            photographer: "示例來源：黨史館典藏",
             tags: ["documents"],
             nid: "bafybeiacmqanntukgnfeqpwtckmwpkl22ixiad4fr3ev4dlj4ivu6dzjf4"
         },
         {
             id: 4,
-            title: "[示例] 國父墨寶",
-            description: "示例內容：孫中山先生親筆墨寶（此為示例，請替換為實際內容）",
-            date: "示例日期",
-            photographer: "示例來源：黨史館典藏",
             tags: ["calligraphy"],
             nid: "bafybeiacmqanntukgnfeqpwtckmwpkl22ixiad4fr3ev4dlj4ivu6dzjf4"
         },
         {
             id: 5,
-            title: "[示例] 中山先生墨跡",
-            description: "示例內容：孫中山先生墨跡（此為示例，請替換為實際內容）",
-            date: "示例日期",
-            photographer: "示例來源：黨史館典藏",
             tags: ["calligraphy"],
             nid: "bafybeiacmqanntukgnfeqpwtckmwpkl22ixiad4fr3ev4dlj4ivu6dzjf4"
         }
@@ -82,24 +62,16 @@ document.addEventListener('DOMContentLoaded', () => {
             photoItem.className = 'photo-item';
             photoItem.setAttribute('data-id', photo.id);
             
-            // Create Capture Eye component with the photo information
+            // Create Capture Eye component without photo-info section
+            // Let Capture Eye handle everything
             photoItem.innerHTML = `
                 <capture-eye nid="${photo.nid}">
                     <media-viewer
                         width="100%"
                         src="https://ipfs-pin.numbersprotocol.io/ipfs/${photo.nid}"
-                        alt="${photo.title}"
+                        alt="Photo ${photo.id}"
                     >
                     </media-viewer>
-                    <div class="photo-info">
-                        <h3 class="photo-title">${photo.title}</h3>
-                        <p class="photo-date">${formatDate(photo.date)}</p>
-                        <p class="photo-description">${photo.description}</p>
-                        <p class="photo-photographer">攝影：${photo.photographer}</p>
-                        <div class="photo-tags">
-                            ${photo.tags.map(tag => `<span class="photo-tag">${getTagName(tag)}</span>`).join('')}
-                        </div>
-                    </div>
                 </capture-eye>
             `;
             
@@ -109,8 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Helper functions
     function formatDate(dateString) {
-        // For demonstration purposes, just return the string
-        // In a real application, you would format the date properly
         return dateString;
     }
     
