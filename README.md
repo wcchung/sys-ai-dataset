@@ -28,10 +28,12 @@ sun-yat-sen-archive/
 │   ├── Capture_logo.webp   # Partner logos
 │   ├── kmtstudio-logotype-long.png
 │   └── KMT banner.mp4      # Background video
-└── sample_files/           # Sample content (not used in production)
-    ├── 001.jpg
-    ├── 005.jpg
-    └── ...
+├── sample_files/           # Sample content (not used in production)
+│   ├── 001.jpg
+│   ├── 005.jpg
+│   └── ...
+├── gallery-capture.html    # (not used in production)
+└── gallery-capture.js      # (not used in production)
 ```
 
 ## Setup Instructions
