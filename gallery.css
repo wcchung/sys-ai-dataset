@@ -267,3 +267,46 @@ capture-eye::part(modal) {
 capture-eye::part(overlay) {
     background-color: rgba(0, 0, 0, 0.9);
 }
+
+/* Loading indicator styles */
+.loading-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 3rem 0;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #DAA520;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Error message styles */
+.error-message {
+    padding: 2rem;
+    text-align: center;
+    color: #f8d7da;
+    background-color: rgba(220, 53, 69, 0.1);
+    border: 1px solid rgba(220, 53, 69, 0.3);
+    border-radius: 5px;
+    margin: 2rem 0;
+}
+
+.no-results {
+    padding: 3rem 0;
+    text-align: center;
+    color: #ddd;
+    font-size: 1.2rem;
+}
