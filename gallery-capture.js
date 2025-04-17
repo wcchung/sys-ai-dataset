@@ -7,9 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "示例內容：國父墨跡（此為示例，請替換為實際內容）",
             date: "示例日期",
             photographer: "示例來源：黨史館典藏",
-            src: "images/007.jpg",
             tags: ["calligraphy"],
-            nid: "bafybeiacmqanntukgnfeqpwtckmwpkl22ixiad4fr3ev4dlj4ivu6dzjf4" // Sample Nid
+            nid: "bafybeiacmqanntukgnfeqpwtckmwpkl22ixiad4fr3ev4dlj4ivu6dzjf4"
         },
         {
             id: 2,
@@ -17,9 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "示例內容：孫中山先生影像（此為示例，請替換為實際內容）",
             date: "示例日期",
             photographer: "示例來源：黨史館典藏",
-            src: "images/009.jpg",
             tags: ["calligraphy"],
-            nid: "bafybeiacmqanntukgnfeqpwtckmwpkl22ixiad4fr3ev4dlj4ivu6dzjf4" // Sample Nid
+            nid: "bafybeiacmqanntukgnfeqpwtckmwpkl22ixiad4fr3ev4dlj4ivu6dzjf4"
         },
         {
             id: 3,
@@ -27,9 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "示例內容：與革命相關之歷史文獻（此為示例，請替換為實際內容）",
             date: "示例日期",
             photographer: "示例來源：黨史館典藏",
-            src: "images/革命文獻4~6輯.pdf",
             tags: ["documents"],
-            nid: "bafybeiacmqanntukgnfeqpwtckmwpkl22ixiad4fr3ev4dlj4ivu6dzjf4" // Sample Nid
+            nid: "bafybeiacmqanntukgnfeqpwtckmwpkl22ixiad4fr3ev4dlj4ivu6dzjf4"
         },
         {
             id: 4,
@@ -37,9 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "示例內容：孫中山先生親筆墨寶（此為示例，請替換為實際內容）",
             date: "示例日期",
             photographer: "示例來源：黨史館典藏",
-            src: "images/011.jpg",
             tags: ["calligraphy"],
-            nid: "bafybeiacmqanntukgnfeqpwtckmwpkl22ixiad4fr3ev4dlj4ivu6dzjf4" // Sample Nid
+            nid: "bafybeiacmqanntukgnfeqpwtckmwpkl22ixiad4fr3ev4dlj4ivu6dzjf4"
         },
         {
             id: 5,
@@ -47,9 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "示例內容：孫中山先生墨跡（此為示例，請替換為實際內容）",
             date: "示例日期",
             photographer: "示例來源：黨史館典藏",
-            src: "images/005.jpg",
             tags: ["calligraphy"],
-            nid: "bafybeiacmqanntukgnfeqpwtckmwpkl22ixiad4fr3ev4dlj4ivu6dzjf4" // Sample Nid
+            nid: "bafybeiacmqanntukgnfeqpwtckmwpkl22ixiad4fr3ev4dlj4ivu6dzjf4"
         }
     ];
 
@@ -90,9 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // Create Capture Eye component with the photo information
             photoItem.innerHTML = `
                 <capture-eye nid="${photo.nid}">
-                    <media-viewer 
-                        width="100%" 
-                        src="${photo.src}"
+                    <media-viewer
+                        width="100%"
+                        src="https://ipfs-pin.numbersprotocol.io/ipfs/${photo.nid}"
                         alt="${photo.title}"
                     >
                     </media-viewer>
