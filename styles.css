@@ -304,29 +304,30 @@ a {
     }
 }
 
-/* Mobile design based on Figma specs for 375px width */
+/* Mobile design based on Figma specs for 375px width, 812px height */
 @media (max-width: 768px) {
     /* The video positioning is handled by the mobile-specific video handling above */
     
     .landing-content {
         width: 100%;
-        padding: 0;
-        position: absolute;
-        top: 0;
-        transform: none;
-        left: 0;
         height: 100vh;
+        position: relative;
+        padding: 0;
         display: flex;
         flex-direction: column;
-        align-items: center; /* Center align all content horizontally */
+        align-items: center;
+        justify-content: flex-start;
+        top: 0;
+        left: 0;
+        transform: none;
     }
     
     .title-container {
-        width: 100%;
+        width: 90%;
+        max-width: 349px;
         height: auto;
-        position: absolute;
-        top: 254px; /* Fixed position from top */
-        margin: 0;
+        position: relative;
+        margin-top: calc(254px / 812px * 100vh); /* ~31.3% from top */
         text-align: center;
     }
     
@@ -349,10 +350,9 @@ a {
     }
     
     .powered-by {
-        position: absolute;
-        top: 466px; /* 466px from top as specified */
         width: 100%;
-        margin: 0; /* Remove existing margins */
+        position: relative;
+        margin-top: calc((466px - 254px - 124px) / 812px * 100vh); /* Spacing after title container */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -385,13 +385,12 @@ a {
     }
     
     .buttons {
-        position: absolute;
-        top: 622px; /* Position buttons container at Enter button location */
         width: 100%;
+        position: relative;
+        margin-top: calc((622px - 466px - 100px) / 812px * 100vh); /* Spacing after powered by */
         display: flex;
         flex-direction: column;
-        align-items: center; /* Center align buttons */
-        margin: 0; /* Remove existing margins */
+        align-items: center;
         padding: 0;
         text-align: center;
     }
@@ -401,14 +400,11 @@ a {
         width: 160px;
         height: 55px;
         font-size: 20px;
-        position: relative;
     }
     
     .learn-more {
         position: relative;
         margin: 0;
-        top: auto;
-        left: auto;
     }
 }
 
@@ -443,20 +439,6 @@ a {
     .kmt-logo-container {
         width: 150px;
         height: 40px;
-    }
-}
-
-/* Dark mode adjustments */
-@media (prefers-color-scheme: dark) {
-    /* For dark mode browsers like Brave that override background colors */
-    .kmt-logo-container {
-        background-color: #333333 !important; /* Dark but visible background */
-        border: 1px solid rgba(255, 255, 255, 0.3) !important; /* Subtle border for definition */
-    }
-    
-    /* Instead of inverting the logo, we're going to add a more visible border */
-    .enter-btn {
-        border: 1px solid rgba(255, 255, 255, 0.5) !important;
     }
 }
 
