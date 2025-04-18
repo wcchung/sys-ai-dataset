@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="file-preview pdf-preview" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; padding: 0; margin: 0; width: 100%; height: 100%; background-color: #1a1a1a;">
                     <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100%;">
                         <div class="file-icon" style="margin-bottom: 10px;">
-                            <img src="images/PDF Preview Icon.png" alt="PDF Icon" style="width: auto; height: 130px;">
+                            <img src="images/PDF Preview Icon.png" alt="PDF Icon" style="width: auto; height: 180px;">
                         </div>
                         <div class="file-info">
                             <div class="file-title">${title}</div>
@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="file-preview document-preview" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; padding: 0; margin: 0; width: 100%; height: 100%; background-color: #1a1a1a;">
                 <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100%;">
                     <div class="file-icon" style="margin-bottom: 10px;">
-                        <img src="images/Document Icon.png" alt="Document Icon" style="width: auto; height: 130px;">
+                        <img src="images/Document Icon.png" alt="Document Icon" style="width: auto; height: 180px;">
                     </div>
                     <div class="file-info">
                         <div class="file-title">${title}</div>
