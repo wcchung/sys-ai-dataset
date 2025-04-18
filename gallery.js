@@ -140,10 +140,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // For PDF files
         if (fileType === 'application/pdf') {
             return `
-                <div class="file-preview pdf-preview" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; padding: 0;">
-                    <div style="text-align: center; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                        <div class="file-icon" style="margin-bottom: 15px;">
-                            <img src="images/PDF Preview Icon.png" alt="PDF Icon" style="width: auto; height: 100px;">
+                <div class="file-preview pdf-preview" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; padding: 0; margin: 0; width: 100%; height: 100%; background-color: #1a1a1a;">
+                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100%;">
+                        <div class="file-icon" style="margin-bottom: 10px;">
+                            <img src="images/PDF Preview Icon.png" alt="PDF Icon" style="width: auto; height: 130px;">
                         </div>
                         <div class="file-info">
                             <div class="file-title">${title}</div>
@@ -156,10 +156,10 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // For other document types (generic document icon)
         return `
-            <div class="file-preview document-preview" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; padding: 0;">
-                <div style="text-align: center; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                    <div class="file-icon" style="margin-bottom: 15px;">
-                        <img src="images/Document Icon.png" alt="Document Icon" style="width: auto; height: 100px;">
+            <div class="file-preview document-preview" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; padding: 0; margin: 0; width: 100%; height: 100%; background-color: #1a1a1a;">
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100%;">
+                    <div class="file-icon" style="margin-bottom: 10px;">
+                        <img src="images/Document Icon.png" alt="Document Icon" style="width: auto; height: 130px;">
                     </div>
                     <div class="file-info">
                         <div class="file-title">${title}</div>
