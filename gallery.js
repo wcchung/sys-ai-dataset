@@ -141,8 +141,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (fileType === 'application/pdf') {
             return `
                 <div class="file-preview pdf-preview">
-                    <div class="file-icon">
-                        <img src="images/PDF Preview Icon.png" alt="PDF Icon" style="width: 100%; max-width: 120px; height: auto;">
+                    <div class="file-icon" style="flex: 1; display: flex; align-items: center;">
+                        <img src="images/PDF Preview Icon.png" alt="PDF Icon" style="max-width: 80%; max-height: 80%;">
                     </div>
                     <div class="file-info">
                         <div class="file-title">${title}</div>
@@ -155,8 +155,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // For other document types (generic document icon)
         return `
             <div class="file-preview document-preview">
-                <div class="file-icon">
-                    <img src="images/Document Icon.png" alt="Document Icon" style="width: 100%; max-width: 120px; height: auto;">
+                <div class="file-icon" style="flex: 1; display: flex; align-items: center;">
+                    <img src="images/Document Icon.png" alt="Document Icon" style="max-width: 80%; max-height: 80%;">
                 </div>
                 <div class="file-info">
                     <div class="file-title">${title}</div>

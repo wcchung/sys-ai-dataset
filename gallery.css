@@ -152,14 +152,6 @@ capture-eye::part(overlay) {
     box-sizing: border-box;
 }
 
-.pdf-preview {
-    background-color: #2d1e1e;
-}
-
-.document-preview {
-    background-color: #252216;
-}
-
 .file-icon {
     margin-bottom: 1rem;
     display: flex;
