@@ -141,10 +141,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (fileType === 'application/pdf') {
             return `
                 <div class="file-preview pdf-preview">
-                    <div class="file-icon" style="flex: 1; display: flex; align-items: center;">
-                        <img src="images/PDF Preview Icon.png" alt="PDF Icon" style="max-width: 80%; max-height: 80%;">
+                    <div class="file-icon" style="height: 65%; display: flex; align-items: center; justify-content: center;">
+                        <img src="images/PDF Preview Icon.png" alt="PDF Icon" style="max-height: 100%; width: auto;">
                     </div>
-                    <div class="file-info">
+                    <div class="file-info" style="height: 35%; display: flex; flex-direction: column; justify-content: center;">
                         <div class="file-title">${title}</div>
                         <div class="file-type">PDF 文件</div>
                     </div>
@@ -155,10 +155,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // For other document types (generic document icon)
         return `
             <div class="file-preview document-preview">
-                <div class="file-icon" style="flex: 1; display: flex; align-items: center;">
-                    <img src="images/Document Icon.png" alt="Document Icon" style="max-width: 80%; max-height: 80%;">
+                <div class="file-icon" style="height: 65%; display: flex; align-items: center; justify-content: center;">
+                    <img src="images/Document Icon.png" alt="Document Icon" style="max-height: 100%; width: auto;">
                 </div>
-                <div class="file-info">
+                <div class="file-info" style="height: 35%; display: flex; flex-direction: column; justify-content: center;">
                     <div class="file-title">${title}</div>
                     <div class="file-type">${getFileTypeDisplay(fileType)}</div>
                 </div>
