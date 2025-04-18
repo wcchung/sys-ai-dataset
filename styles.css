@@ -364,7 +364,7 @@ a {
         margin: 0 auto 30px;
         white-space: nowrap; /* Prevent line breaks within the title */
         text-align: center;
-        font-family: var(--font-heading); /* Explicitly set font family to ensure consistency */
+        font-family: var(--font-heading) !important; /* Ensure Georgia font */
     }
     
     .subtitle {
@@ -373,7 +373,14 @@ a {
         line-height: 32px; /* Increased line height to match the new font size */
         margin: 0 auto;
         text-align: center;
-        font-family: var(--font-heading); /* Explicitly set font family to ensure consistency */
+        font-family: var(--font-heading) !important; /* Ensure Georgia font */
+    }
+    
+    /* Ensure modal text uses the correct font in mobile */
+    .modal-text {
+        font-family: var(--font-heading) !important; /* Ensure Georgia font */
+        line-height: 1.8;
+        margin-bottom: 2rem;
     }
     
     .powered-by {
@@ -423,11 +430,14 @@ a {
         margin-bottom: 20px; /* Add extra bottom margin */
     }
     
+    /* Fix enter button styles on mobile */
     .enter-btn {
         margin: 0 auto 20px;
         width: 160px;
         height: 55px;
         font-size: 20px;
+        background-color: var(--color-accent) !important; /* Ensure accent color is applied */
+        border: 1px solid var(--color-accent);
     }
     
     .learn-more {
