@@ -1,4 +1,27 @@
 /* Global Styles */
+:root {
+    /* Font variables */
+    --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-heading: Georgia, "Times New Roman", serif;
+    
+    /* Color variables */
+    --color-background: #0A0A0A;
+    --color-text: #FFFFFF;
+    --color-accent: #E0B122;
+    --color-link: #3498db;
+    --color-error: #f8d7da;
+    --color-error-bg: rgba(220, 53, 69, 0.1);
+    --color-divider: #444444;
+    
+    /* UI Element Colors */
+    --color-modal-bg: #191919;
+    --color-button: #555;
+    --color-button-hover: #777;
+    --color-footer-bg: #111;
+    --color-footer-text: #888;
+    --color-light-gray: #ddd;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,15 +30,15 @@
 
 /* Base font for entire site */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #000;
-    color: #fff;
+    font-family: var(--font-primary);
+    background-color: var(--color-background);
+    color: var(--color-text);
     line-height: 1.6;
 }
 
 /* Heading font family - only defined once */
 .main-title, .subtitle, .modal-text {
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: var(--font-heading);
     font-weight: 600;
 }
 
@@ -25,12 +48,12 @@ body {
 }
 
 a {
-    color: #fff;
+    color: var(--color-text);
     text-decoration: none;
 }
 
 .link {
-    color: #3498db;
+    color: var(--color-link);
     text-decoration: none;
 }
 
@@ -109,7 +132,7 @@ a {
     font-size: 60px;
     line-height: 24px;
     text-align: center;
-    color: #FFFFFF;
+    color: var(--color-text);
     position: relative;
     width: 1200px;
     margin: 0 auto 50px;
@@ -119,18 +142,19 @@ a {
     font-size: 45px; /* Reverted back to original */
     line-height: 20px; /* Reverted back to original */
     text-align: center;
-    color: #FFFFFF;
+    color: var(--color-text);
     position: relative;
     width: 738px;
     margin: 0 auto 80px;
 }
 
 .white-text {
-    color: #FFFFFF;
+    color: var(--color-text);
 }
 
 .gold-text {
-    color: #E0B122;
+    color: var(--color-accent);
+    font-size: 1.15em; /* Make gold text 15% larger than surrounding text */
 }
 
 .powered-by {
@@ -141,7 +165,7 @@ a {
     font-size: 20px;
     line-height: 16px;
     text-align: center;
-    color: #FFFFFF;
+    color: var(--color-text);
     margin-bottom: 20px;
 }
 
@@ -170,7 +194,7 @@ a {
 
 /* KMT Logo with white rounded rectangle background */
 .kmt-logo-container {
-    background-color: #FFFFFF !important; /* Important flag to override browser styles */
+    background-color: var(--color-text) !important; /* Important flag to override browser styles */
     forced-color-adjust: none; /* Prevents Windows high contrast mode from changing colors */
     border-radius: 10px;
     display: flex;
@@ -204,7 +228,7 @@ a {
 }
 
 .enter-btn {
-    background-color: #FFFFFF !important; /* Important flag to override browser styles */
+    background-color: var(--color-accent) !important; /* Changed from white to accent color */
     forced-color-adjust: none; /* Prevents Windows high contrast mode from changing colors */
     color: #000000;
     font-size: 24px;
@@ -217,11 +241,11 @@ a {
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    border: 1px solid #FFFFFF;
+    border: 1px solid var(--color-accent); /* Updated border color to match background */
 }
 
 .enter-btn:hover {
-    background-color: #f0f0f0;
+    background-color: #f0cd6d; /* Lighter version of the accent color for hover state */
 }
 
 .learn-more {
@@ -229,7 +253,7 @@ a {
     line-height: 16px;
     text-align: center;
     text-decoration-line: underline;
-    color: #FFFFFF;
+    color: var(--color-text);
 }
 
 .learn-more:hover {
@@ -250,7 +274,7 @@ a {
 }
 
 .modal-content {
-    background-color: #000;
+    background-color: var(--color-background);
     margin: 5% auto;
     padding: 2rem;
     border: 1px solid #333;
@@ -273,13 +297,13 @@ a {
 
 .credits {
     font-size: 0.9rem;
-    color: #aaa;
+    color: var(--color-text);
     margin-top: 2rem;
 }
 
 .close-btn {
-    background-color: #555;
-    color: #fff;
+    background-color: var(--color-button);
+    color: var(--color-text);
     border: none;
     padding: 0.5rem 2rem;
     margin: 0 auto;
@@ -287,7 +311,7 @@ a {
 }
 
 .close-btn:hover {
-    background-color: #777;
+    background-color: var(--color-button-hover);
 }
 
 /* Responsive Adjustments */
@@ -340,6 +364,7 @@ a {
         margin: 0 auto 30px;
         white-space: nowrap; /* Prevent line breaks within the title */
         text-align: center;
+        font-family: var(--font-heading) !important; /* Ensure Georgia font */
     }
     
     .subtitle {
@@ -348,6 +373,14 @@ a {
         line-height: 32px; /* Increased line height to match the new font size */
         margin: 0 auto;
         text-align: center;
+        font-family: var(--font-heading) !important; /* Ensure Georgia font */
+    }
+    
+    /* Ensure modal text uses the correct font in mobile */
+    .modal-text {
+        font-family: var(--font-heading) !important; /* Ensure Georgia font */
+        line-height: 1.8;
+        margin-bottom: 2rem;
     }
     
     .powered-by {
@@ -397,16 +430,24 @@ a {
         margin-bottom: 20px; /* Add extra bottom margin */
     }
     
+    /* Fix enter button styles on mobile */
     .enter-btn {
         margin: 0 auto 20px;
         width: 160px;
         height: 55px;
         font-size: 20px;
+        background-color: var(--color-accent) !important; /* Ensure accent color is applied */
+        border: 1px solid var(--color-accent);
     }
     
     .learn-more {
         position: relative;
         margin: 0;
+    }
+    
+    /* Gold text to maintain same relative size increase on mobile */
+    .gold-text {
+        font-size: 1.15em; /* Keep the same relative size increase */
     }
 }
 
@@ -446,7 +487,7 @@ a {
 
 /* Header for Gallery Page */
 header {
-    background-color: #000;
+    background-color: var(--color-background);
     padding: 1rem 0;
     position: sticky;
     top: 0;
@@ -474,7 +515,7 @@ header {
 
 /* Footer Styles */
 footer {
-    background-color: #111;
+    background-color: var(--color-footer-bg);
     padding: 2rem 0;
     margin-top: 2rem;
 }
@@ -507,7 +548,7 @@ footer {
 
 footer p {
     font-size: 0.9rem;
-    color: #888;
+    color: var(--color-footer-text);
 }
 
 /* Responsive footer adjustments */

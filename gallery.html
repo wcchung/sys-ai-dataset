@@ -12,8 +12,7 @@
         body {
             margin: 0;
             padding: 0;
-            background: #0A0A0A;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--color-background);
             overflow-x: hidden;
         }
         
@@ -23,7 +22,7 @@
             max-width: 1512px;
             min-height: 100vh;
             margin: 0 auto;
-            background: #0A0A0A;
+            background: var(--color-background);
             display: flex;
         }
         
@@ -51,30 +50,30 @@
         }
         
         .site-title {
-            font-family: Georgia, "Times New Roman", serif;
+            font-family: var(--font-heading);
             font-style: normal;
             font-weight: 600;
-            font-size: 24px;
-            line-height: 32px;
-            color: #FFFFFF;
-            margin-bottom: 10px;
+            font-size: 1.5rem;
+            line-height: 2rem;
+            color: var(--color-text);
+            margin-bottom: 0.625rem;
             text-align: left;
         }
         
         .site-subtitle {
-            font-family: Georgia, "Times New Roman", serif;
+            font-family: var(--font-heading);
             font-style: normal;
             font-weight: 600;
-            font-size: 16px;
-            line-height: 24px;
-            color: #FFFFFF;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            color: var(--color-text);
             text-align: left;
         }
         
         .divider {
             width: 204px;
             height: 0;
-            border: 0.5px solid #444444;
+            border: 0.5px solid var(--color-divider);
             margin: 20px 0;
         }
         
@@ -94,8 +93,8 @@
         .tag-item {
             cursor: pointer;
             padding: 8px 0;
-            font-size: 16px;
-            color: #FFFFFF;
+            font-size: 1rem;
+            color: var(--color-text);
             transition: color 0.3s ease;
             width: 100%;
             text-align: left;
@@ -109,7 +108,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background-color: #DAA520;
+            background-color: var(--color-accent);
             transition: width 0.3s ease;
             max-width: 204px;
         }
@@ -120,7 +119,7 @@
         }
         
         .tag-item.active {
-            color: #DAA520;
+            color: var(--color-accent);
         }
         
         .main-content {
@@ -137,7 +136,7 @@
             top: 0;
             left: 286px;
             right: 46px;
-            background: #0A0A0A;
+            background: var(--color-background);
             z-index: 10;
             padding-top: 40px;
         }
@@ -150,29 +149,29 @@
         }
         
         .tag-selected {
-            font-family: 'Zen Old Mincho', serif;
+            font-family: var(--font-heading);
             font-style: normal;
             font-weight: 600;
-            font-size: 24px;
-            line-height: 32px;
-            color: #FFFFFF;
+            font-size: 1.5rem;
+            line-height: 2rem;
+            color: var(--color-text);
             width: 460px;
         }
         
         .results-count {
-            font-family: 'Zen Old Mincho', serif;
+            font-family: var(--font-heading);
             font-style: normal;
             font-weight: 600;
-            font-size: 16px;
-            line-height: 24px;
+            font-size: 1rem;
+            line-height: 1.5rem;
             text-align: right;
-            color: #FFFFFF;
+            color: var(--color-text);
         }
         
         .horizontal-divider {
             width: 100%;
             height: 0;
-            border: 0.5px solid #444444;
+            border: 0.5px solid var(--color-divider);
             margin: 0;
         }
         
@@ -182,7 +181,7 @@
             height: 0;
             left: 266px;
             top: 40px;
-            border: 0.5px solid #444444;
+            border: 0.5px solid var(--color-divider);
             transform: rotate(90deg);
             transform-origin: 0 0;
             z-index: 5;
@@ -196,8 +195,9 @@
         }
         
         .disclaimer {
-            font-size: 10px;
-            color: #CCCCCC;
+            font-family: var(--font-heading);
+            font-size: 0.625rem;
+            color: var(--color-text);
             text-align: left;
             width: 100%;
             max-width: 204px;
@@ -233,8 +233,8 @@
         }
         
         .copyright {
-            font-size: 12px;
-            color: #CCCCCC;
+            font-size: 0.75rem;
+            color: var(--color-text);
             text-align: left;
             margin-top: 10px;
         }
@@ -254,7 +254,7 @@
             <div class="sidebar-content">
                 <div class="site-header">
                     <a href="index.html" class="logo-home">
-                        <div class="site-title">孫中山逝世<span class="gold-text">100</span>週年</div>
+                        <div class="site-title">孫中山逝世百週年</div>
                         <div class="site-subtitle">AI 人工智慧歷史資料集</div>
                     </a>
                     
