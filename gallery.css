@@ -27,7 +27,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #DAA520;
+    background-color: var(--color-accent);
     transition: width 0.3s ease;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .tag-item.active {
-    color: #DAA520;
+    color: var(--color-accent);
     font-weight: 500;
 }
 
@@ -88,9 +88,9 @@ media-viewer {
 /* Customize Capture Eye modal appearance */
 capture-eye::part(modal) {
     max-width: 90vw;
-    background-color: #191919;
+    background-color: var(--color-modal-bg);
     border-radius: 8px;
-    color: #fff;
+    color: var(--color-text);
 }
 
 capture-eye::part(overlay) {
@@ -111,7 +111,7 @@ capture-eye::part(overlay) {
     width: 50px;
     height: 50px;
     border: 4px solid rgba(255, 255, 255, 0.3);
-    border-top: 4px solid #DAA520;
+    border-top: 4px solid var(--color-accent);
     border-radius: 50%;
     animation: spin 1s linear infinite;
     margin-bottom: 1rem;
@@ -126,8 +126,8 @@ capture-eye::part(overlay) {
 .error-message {
     padding: 2rem;
     text-align: center;
-    color: #f8d7da;
-    background-color: rgba(220, 53, 69, 0.1);
+    color: var(--color-error);
+    background-color: var(--color-error-bg);
     border: 1px solid rgba(220, 53, 69, 0.3);
     border-radius: 5px;
     margin: 2rem 0;
@@ -136,7 +136,7 @@ capture-eye::part(overlay) {
 .no-results {
     padding: 3rem 0;
     text-align: center;
-    color: #ddd;
+    color: var(--color-light-gray);
     font-size: 1.2rem;
 }
 
@@ -148,7 +148,7 @@ capture-eye::part(overlay) {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #1a1a1a;
+    background-color: var(--color-modal-bg);
     padding: 1rem;
     box-sizing: border-box;
 }
@@ -178,5 +178,5 @@ capture-eye::part(overlay) {
 .file-type {
     font-size: 0.8rem;
     opacity: 0.7;
-    color: #ddd;
+    color: var(--color-light-gray);
 }
