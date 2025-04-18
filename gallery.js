@@ -140,13 +140,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // For PDF files
         if (fileType === 'application/pdf') {
             return `
-                <div class="file-preview pdf-preview" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; padding: 0; margin: 0; background-color: #1a1a1a; display: flex; flex-direction: column; justify-content: space-between;">
-                    <div style="flex: 1; display: flex; justify-content: center; align-items: center; overflow: hidden; padding-top: 20px;">
-                        <img src="images/PDF Preview Icon.png" alt="PDF Icon" style="max-width: 85%; max-height: 85%; object-fit: contain;">
+                <div class="file-preview pdf-preview">
+                    <div class="file-icon" style="flex: 1; display: flex; align-items: center;">
+                        <img src="images/PDF Preview Icon.png" alt="PDF Icon" style="max-width: 60%; max-height: 60%;">
                     </div>
-                    <div style="padding: 10px; text-align: center; background-color: rgba(26, 26, 26, 0.9); margin-top: auto;">
-                        <div class="file-title" style="font-weight: 500; font-size: 0.9rem; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${title}</div>
-                        <div class="file-type" style="font-size: 0.8rem; opacity: 0.7; color: #ddd;">PDF 文件</div>
+                    <div class="file-info">
+                        <div class="file-title">${title}</div>
+                        <div class="file-type">PDF 文件</div>
                     </div>
                 </div>
             `;
@@ -154,13 +154,13 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // For other document types (generic document icon)
         return `
-            <div class="file-preview document-preview" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; padding: 0; margin: 0; background-color: #1a1a1a; display: flex; flex-direction: column; justify-content: space-between;">
-                <div style="flex: 1; display: flex; justify-content: center; align-items: center; overflow: hidden; padding-top: 20px;">
-                    <img src="images/Document Icon.png" alt="Document Icon" style="max-width: 85%; max-height: 85%; object-fit: contain;">
+            <div class="file-preview document-preview">
+                <div class="file-icon" style="flex: 1; display: flex; align-items: center;">
+                    <img src="images/Document Icon.png" alt="Document Icon" style="max-width: 60%; max-height: 60%;">
                 </div>
-                <div style="padding: 10px; text-align: center; background-color: rgba(26, 26, 26, 0.9); margin-top: auto;">
-                    <div class="file-title" style="font-weight: 500; font-size: 0.9rem; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${title}</div>
-                    <div class="file-type" style="font-size: 0.8rem; opacity: 0.7; color: #ddd;">${getFileTypeDisplay(fileType)}</div>
+                <div class="file-info">
+                    <div class="file-title">${title}</div>
+                    <div class="file-type">${getFileTypeDisplay(fileType)}</div>
                 </div>
             </div>
         `;
